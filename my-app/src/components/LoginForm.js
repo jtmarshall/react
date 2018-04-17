@@ -1,4 +1,5 @@
 import React from "react";
+import propTypes from "prop-types";
 import { Form, Button } from "semantic-ui-react";
 import Validator from "validator";
 import InlineError from "./InlineError";
@@ -21,6 +22,11 @@ class LoginForm extends React.Component {
     onSubmit = () => {
         const errors = this.validate(this.state.data);
         this.setState({ errors });
+        // Check is errors obj is empty (no errors)
+        if (Object.keys(errors).length === 0) {
+            // Pass data
+            this.props.submit(this.state.data);
+        }
     };
 
     // Boilerplate validate code
@@ -55,5 +61,10 @@ class LoginForm extends React.Component {
         );
     }
 }
+
+// Require parent, (LoginPage), to pass submit func
+LoginForm.propTypes = {
+    submit: propTypes.func.isRequired
+};
 
 export default LoginForm;
