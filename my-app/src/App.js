@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Route } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import LoginPage from "./components/LoginPage";
 import './App.css';
 import UserInfo from './components/user-info';
 import Projects from './components/projects';
@@ -24,6 +27,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <Route path="/" exact component={HomePage} />
+      <Route path="/login" exact component={LoginPage} />
         <header className="App-header">
           <h1 className="App-title">YAK React</h1>
         </header>
