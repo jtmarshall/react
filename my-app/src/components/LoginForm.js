@@ -1,14 +1,14 @@
 import React from "react";
 import propTypes from "prop-types";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Message } from "semantic-ui-react";
 import Validator from "validator";
 import InlineError from "./InlineError";
 
 class LoginForm extends React.Component {
     state = {
         data: {
-            email: '',
-            password: ''
+            user: '',
+            pass: ''
         },
         loading: false,
         errors: {}
@@ -24,7 +24,7 @@ class LoginForm extends React.Component {
         this.setState({ errors });
         // Check is errors obj is empty (no errors)
         if (Object.keys(errors).length === 0) {
-            // Pass data
+            // Pass data, catch errors
             this.props.submit(this.state.data);
         }
     };
@@ -32,8 +32,8 @@ class LoginForm extends React.Component {
     // Boilerplate validate code
     validate = (data) => {
         const errors = {};
-        if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
-        if (!data.password) errors.password = "Cannot be blank";
+        if (!Validator.isEmail(data.user)) errors.user = "Invalid email";
+        if (!data.pass) errors.pass = "Cannot be blank";
         return errors;
     }
 
@@ -43,18 +43,24 @@ class LoginForm extends React.Component {
 
         return(
             <Form onSubmit={this.onSubmit}>
-                <Form.Field error={!!errors.email}>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="example@example.com"
-                        value={data.email} onChange={this.onChange}/>
+            { errors.global && (
+                <Message negative>
+                    <Message.Header>Something went wrong</Message.Header>
+                    <p>{errors.global}</p>
+                </Message>
+            )}
+                <Form.Field error={!!errors.user}>
+                    <label htmlFor="user">Email</label>
+                    <input type="email" id="user" name="user" placeholder="user"
+                        value={data.user} onChange={this.onChange}/>
                 </Form.Field>
-                {errors.email && <InlineError text={errors.email} />}
-                <Form.Field error={!!errors.password}>
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="******"
+                {errors.user && <InlineError text={errors.user} />}
+                <Form.Field error={!!errors.pass}>
+                    <label htmlFor="pass">Password</label>
+                    <input type="password" id="pass" name="pass" placeholder="******"
                         value={data.password} onChange={this.onChange}/>
                 </Form.Field>
-                {errors.password && <InlineError text={errors.password} />}
+                {errors.pass && <InlineError text={errors.pass} />}
                 <Button primary>Login</Button>
 
             </Form>
