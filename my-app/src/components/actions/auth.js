@@ -8,5 +8,11 @@ export const userLoggedIn = (user) => ({
 });
 
 // func takes credentials, returns another func, that will make the api request with credentials
-export const login = credentials => dispatch =>
-    api.user.login(credentials).then(user => dispatch(userLoggedIn(user)));
+export const login = (credentials) => {
+    api.user.login(credentials).then(res => {
+        console.log(res);
+        // save token to session
+        sessionStorage.acadiaToken = res.Token;
+        userLoggedIn(res.User);
+    });
+}

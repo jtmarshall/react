@@ -8,25 +8,24 @@ var fData = new FormData();
 
 export default {
     user: {
-        login: (credentials) => {
+        login: credentials => {
             // set form data
             fData.set('user', credentials.user);
             fData.set('pass', credentials.pass);
-            // axios post request with credentials, then take response from server get user data: (email, token)
-            axios({
+            // axios post request with credentials, send with form-data
+            return axios({
                 method: 'post',
                 url: oauthURL,
                 data: fData,
-                config: { headers: {'Content-Type': 'multipart/form-data' }}
+                config: { headers: {'Content-Type': 'application/x-www-form-urlencoded' }}
             })
-            .then(function (response) {
-                //handle success
-                console.log(response.data);
-                res => response.data;
+            .then((response) => {
+                // on success: return response data from server (email, token)
+                return response.data;
             })
-            .catch(function (error) {
-                console.log(error);
-            })
+            // .catch(function (error) {
+            //     console.log(error);
+            // })
         }
     }
 }
