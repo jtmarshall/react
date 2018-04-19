@@ -7,6 +7,8 @@ import './App.css';
 import UserInfo from './components/user-info';
 import Projects from './components/projects';
 import Login from './components/login';
+import TopNav from './components/topbar/topNav';
+
 
 class App extends Component {
   constructor(){
@@ -28,6 +30,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <TopNav />
         <Route path="/" exact component={HomePage} />
         <Route path="/login" exact component={LoginPage} />
         <Route path="/testing" exact component={TestPage} />

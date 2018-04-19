@@ -11,6 +11,8 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";  // allows you to see redux in chrome dev tools
 import rootReducer from "./rootReducer";
+// Material UI
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const store = createStore(
     rootReducer,
@@ -20,7 +22,9 @@ const store = createStore(
 ReactDOM.render(
     <BrowserRouter>
         <Provider store={store}>
-            <App />
+            <MuiThemeProvider>
+                <App />
+            </MuiThemeProvider>
         </Provider>
     </BrowserRouter>, 
     document.getElementById('root'));
