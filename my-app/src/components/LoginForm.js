@@ -22,12 +22,15 @@ class LoginForm extends React.Component {
     onSubmit = () => {
         const errors = this.validate(this.state.data);
         this.setState({ errors });
-        // Check is errors obj is empty (no errors)
         if (Object.keys(errors).length === 0) {
-            // Pass data, catch errors
-            this.props.submit(this.state.data);
+          this.setState({ loading: true });
+          this.props
+            .submit(this.state.data)
+            .catch(err =>
+              this.setState({ errors: err.response.data.errors, loading: false })
+            );
         }
-    };
+      };
 
     // Boilerplate validate code
     validate = (data) => {

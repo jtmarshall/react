@@ -6,7 +6,7 @@ import { login } from "./actions/auth";
 
 class LoginPage extends React.Component {
     // called when form submitted: dispatch login action with passed in data
-    submit = data => this.props.login(data).then(() => this.props.history.push("/"));
+    submit = (data) => this.props.login(data).then(() => this.props.history.push("/"));
     
     render() {
         return (
@@ -22,8 +22,7 @@ LoginPage.propTypes = {
     history: propTypes.shape({
         push: propTypes.func.isRequired
     }).isRequired,
-    
     login: propTypes.func.isRequired
-}
+};
 
 export default connect(null, { login })(LoginPage);
