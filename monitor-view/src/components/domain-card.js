@@ -20,7 +20,7 @@ export class DomainCard extends Component {
       <div className="card" style={this.props.isError ? errStyle : cardStyle}>
         <div className="header">
           <h4 className="title">{this.props.domain}</h4>
-          <p className="category">{this.props.category}</p>
+          <p className="category">{this.props.cardText}</p>
         </div>
         <div
           className={
@@ -34,7 +34,6 @@ export class DomainCard extends Component {
           {this.props.content}
 
           <div className="footer">
-            {this.props.legend}
             {this.props.stats != null ? <hr /> : ""}
             <div className="stats">
               <i className={this.props.statsIcon} /> {this.props.stats}
