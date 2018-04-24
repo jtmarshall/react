@@ -2,7 +2,9 @@ import React, { Component } from "react";
 
 const cardStyle = {
     width: '30%',
-    margin: '10px'
+    margin: '10px',
+    color: '#222',
+    border: '3px solid #00C853'
   };
 
 export class DomainCard extends Component {
