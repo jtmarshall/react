@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/material-dashboard.css';
-import DomainCard from './components/domain-card';
 import StatusView from './views/status.view';
 
 class App extends Component {
