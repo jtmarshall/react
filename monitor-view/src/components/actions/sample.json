@@ -1,0 +1,134 @@
+{
+  "www.acadiahealthcare.com": {
+    "status": 200,
+    "metrics": {
+      "outages": 1,
+      "errors": 7,
+      "loadTime": 0.6
+    }
+  },
+  "www.acadiamontana.com": [
+    0,
+    0
+  ],
+  "www.acadianaaddiction.com": [
+    0,
+    0
+  ],
+  "www.acadiavermilion.com": [
+    0,
+    0
+  ],
+  "www.anchoragectc.com": [
+    0,
+    0
+  ],
+  "www.annarborctc.com": [
+    0,
+    0
+  ],
+  "www.ascentchs.com": [
+    0,
+    0
+  ],
+  "www.azureacres.com": [
+    0,
+    0
+  ],
+  "www.batonrougectc.com": [
+    0,
+    0
+  ],
+  "www.baysidemarin.com": [
+    0,
+    0
+  ],
+  "www.belleofoaks.com": [
+    0,
+    0
+  ],
+  "www.belmontbehavioral.com": [
+    0,
+    0
+  ],
+  "www.beloitctc.com": [
+    0,
+    0
+  ],
+  "www.blueridgemountainrecovery.com": [
+    0,
+    0
+  ],
+  "www.bostonctc.com": [
+    0,
+    0
+  ],
+  "www.bowlinggreenbrandywine.com": [
+    0,
+    0
+  ],
+  "www.brattleboroctc.com": [
+    0,
+    0
+  ],
+  "www.burkwoodtreatmentcenter.com": [
+    0,
+    0
+  ],
+  "www.camprecovery.com": [
+    0,
+    0
+  ],
+  "www.capecodctc.com": [
+    0,
+    0
+  ],
+  "www.carolinaeatingdisorders.com": [
+    0,
+    0
+  ],
+  "www.cartersvillectc.com": [
+    0,
+    0
+  ],
+  "www.cascadebh.com": [
+    0,
+    0
+  ],
+  "www.cedarcresthospital.com": [
+    0,
+    0
+  ],
+  "www.cedarrapidsctc.com": [
+    0,
+    0
+  ],
+  "www.centerforhopeofthesierras.com": [
+    0,
+    0
+  ],
+  "www.centerpointecbs.com": [
+    0,
+    0
+  ],
+  "www.centralvirginiactc.com": [
+    0,
+    0
+  ],
+  "www.christianaddictionprograms.com": [
+    0,
+    0
+  ],
+  "www.claymontctc.com": [
+    0,
+    0
+  ],
+  "www.coveforgebehavioralhealth.com": [
+    0,
+    0
+  ],
+  "www.covingtonbh.com": [
+    0,
+    0
+  ]
+}
