@@ -5,10 +5,6 @@ const cardStyle = {
 };
 
 const errStyle = {
-    width: '30%',
-    height: '180px',
-    margin: '10px',
-    color: '#222',
     border: '3px solid #D50000'
 };
 
