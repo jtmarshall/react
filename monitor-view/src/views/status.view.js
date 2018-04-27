@@ -16,7 +16,9 @@ class StatusView extends Component {
     constructor(props){
         super(props);
         this.state = {
-            domainObj: {}
+            domainObj: {
+                "domain.com" : 200
+            }
         };
         this.retrieve();
     }
@@ -58,7 +60,7 @@ class StatusView extends Component {
             />;
           })} */}
 
-                {Object.keys(domainObj).map(function (keyName, keyIndex) {
+                {domainObj ? (Object.keys(domainObj).map(function (keyName, keyIndex) {
                     // Use keyName to get current key's name, domainObj[keyName] to get value
                     return <DomainCard
                         statsIcon="fa fa-history"
@@ -74,7 +76,8 @@ class StatusView extends Component {
                             </div>
                         }
                     />;
-                })}
+                })) : (<p> Could Not Get Data </p>)
+                }
             </div>
         );
     }
