@@ -2,15 +2,6 @@ import React, {Component} from 'react';
 import DomainCard from '../components/domain-card';
 import api from '../components/actions/api';
 
-// var domains = ["Duffy's", "Galax", "Burkwood"];
-var testObj = {
-    "Duffy's": false,
-    "Galax": true,
-    "Burkwood": false,
-    "Cross Creek": false,
-    "The Rose": true
-};
-
 class StatusView extends Component {
 
     constructor(props){
