@@ -12,9 +12,6 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Monitor Status</h1>
         </header>
-        <p className="App-intro">
-          <code>Recent Domain Activity</code>
-        </p>
         <Route path="/" exact component={StatusView} />
       </div>
     );

@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import ReactChart from './charts/reactChart';
 
 const cardStyle = {
     border: '3px solid #00C853'
@@ -17,8 +18,13 @@ export class DomainCard extends Component {
         return (
             <div className="domainCard card" style={this.props.statusCode > 400 ? errStyle : cardStyle}>
                 <div className="header">
-                    <h4 className="title">{this.props.statusInfo.FacilityName}</h4>
-                    {/*<p className="category">{this.props.cardText}</p>*/}
+                    <h4 className="title">
+                        <a href={"http://" + this.props.domain} target={"_blank"}>
+                        {this.props.statusInfo.FacilityName !== "" ?
+                        this.props.statusInfo.FacilityName : this.props.domain}
+                        </a>
+                    </h4>
+                    <p className="category">{this.props.cardText}</p>
                 </div>
                 <div className={
                         "content" +
@@ -28,25 +34,25 @@ export class DomainCard extends Component {
                         (this.props.ctTableUpgrade ? " table-upgrade" : "")
                     }
                 >
-                    <div className="ct-chart">
+                    <div id="fooChart"></div>
+                    <ReactChart/>
 
-                    </div>
 
                     <div className="footer">
                         {this.props.stats != null ? <hr/> : ""}
                         <div className="stats">
                             <ul style={ulStyle}>
-                                <li hidden={this.props.statusCode == 200}>
+                                <li hidden={this.props.statusCode === 200}>
                                     <b>Status:</b> {this.props.statusInfo.Status}
                                 </li>
                                 <li>
-                                    <b>Avg Resp:</b> {this.props.statusInfo.AvgResponse}<i>ms</i>
+                                    <b>Response Time:</b> {this.props.statusInfo.AvgResponse}<i>ms</i>
                                 </li>
                                 <li>
-                                    <b>Outages:</b> {this.props.statusInfo.Outages}
-                                </li>
-                                <li>
-                                    <b>Errors:</b> {this.props.statusInfo.Errors}
+                                    <b>
+                                        <span style={{color: "#FF2323"}}>Out</span> / <span style={{color: "#ff6700"}}>Err: </span>
+                                    </b>
+                                     {this.props.statusInfo.Outages} / {this.props.statusInfo.Errors}
                                 </li>
                             </ul>
                         </div>
