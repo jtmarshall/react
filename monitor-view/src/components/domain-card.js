@@ -34,8 +34,7 @@ export class DomainCard extends Component {
                         (this.props.ctTableUpgrade ? " table-upgrade" : "")
                     }
                 >
-                    <div id="fooChart"></div>
-                    <ReactChart/>
+                    <ReactChart chartData={this.props.statusInfo.GraphData}/>
 
 
                     <div className="footer">

@@ -14,6 +14,7 @@ class StatusView extends Component {
                     LastUpdate: " "
                 }
             },
+            lastUpdate: " ",
         };
         // get status data obj on startup
         this.retrieve();
@@ -24,7 +25,8 @@ class StatusView extends Component {
         api.status.getStatusInfo().then(resp => {
             console.log(resp);
             this.setState({
-                domainObj: resp
+                domainObj: resp,
+                lastUpdate: resp["www.acadiahealthcare.com"].LastUpdate
             });
         });
     };
@@ -38,8 +40,7 @@ class StatusView extends Component {
             <div className="content">
                 <AlphaNav/>
                 <FacilityAutoComplete/>
-                <h4><code>Updated: {this.state.domainObj["www.acadiahealthcare.com"].LastUpdate ?
-                    this.state.domainObj["www.acadiahealthcare.com"].LastUpdate : ""}</code></h4>
+                <h4><code>Updated: {this.state.lastUpdate}</code></h4>
                 {/* Check whether we have data to show, then create a card for each domain */}
 
                 {domainObj ? (Object.keys(domainObj).map(function (keyName, keyIndex) {
@@ -51,7 +52,7 @@ class StatusView extends Component {
                         statusInfo={domainObj[keyName]}
                         id={keyName}
                         domain={keyName}
-                        cardText="Last 24hr"
+                        cardText="Last Week"
                         stats="Last Outage: "
                         content={
                             <div className="ct-chart">
