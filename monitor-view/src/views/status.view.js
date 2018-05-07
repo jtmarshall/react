@@ -1,20 +1,16 @@
 import React, {Component} from 'react';
 import DomainCard from '../components/domain-card';
 import api from '../components/actions/api';
-import AlphaNav from './alphaBar';
 import FacilityAutoComplete from './facilityAutoComplete';
 
 class StatusView extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            domainObj: {
-                "www.acadiahealthcare.com" : {
-                    LastUpdate: " "
-                }
-            },
+            domainObj: {},
             lastUpdate: " ",
+            selectedFacilities: [],
         };
         // get status data obj on startup
         this.retrieve();
@@ -31,39 +27,72 @@ class StatusView extends Component {
         });
     };
 
+    // Updates the selected facility list
+    selectedUpdate = (val) => {
+        this.setState({
+            selectedFacilities: val
+        });
+        console.log(val);
+    };
+
     render() {
-
         const domainObj = this.state.domainObj;
+        const selected = this.state.selectedFacilities;
 
-        return (
+        if (selected.length > 0) {
+            return (
+                <div className="content">
+                    <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
+                    <h4><code>Updated: {this.state.lastUpdate}</code></h4>
+                    {
+                        (Object.keys(domainObj).map(function (keyName, keyIndex) {
+                            // check if facility name is in the selected list before it gets rendered
+                            if (selected.includes(domainObj[keyName].FacilityName)) {
+                                // Use keyName to get current key's name, domainObj[keyName] to get value
+                                return <DomainCard
+                                    isSelected={true}
+                                    statsIcon="fa fa-history"
+                                    key={keyIndex}
+                                    statusCode={domainObj[keyName].Status}
+                                    statusInfo={domainObj[keyName]}
+                                    id={keyName}
+                                    domain={keyName}
+                                    cardText="Last Week"
+                                    stats="Last Outage: "
+                                />
+                            }
+                        }))
+                    }
 
-            <div className="content">
-                <AlphaNav/>
-                <FacilityAutoComplete/>
-                <h4><code>Updated: {this.state.lastUpdate}</code></h4>
-                {/* Check whether we have data to show, then create a card for each domain */}
+                </div>
+            );
+        } else {
+            return (
+                <div className="content">
+                    <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
+                    <h4><code>Updated: {this.state.lastUpdate}</code></h4>
+                    {/* Check whether we have data to show, then create a card for each domain */}
 
-                {domainObj ? (Object.keys(domainObj).map(function (keyName, keyIndex) {
-                    // Use keyName to get current key's name, domainObj[keyName] to get value
-                    return <DomainCard
-                        statsIcon="fa fa-history"
-                        key={keyIndex}
-                        statusCode={domainObj[keyName].Status}
-                        statusInfo={domainObj[keyName]}
-                        id={keyName}
-                        domain={keyName}
-                        cardText="Last Week"
-                        stats="Last Outage: "
-                        content={
-                            <div className="ct-chart">
-                                Graph Here
-                            </div>
-                        }
-                    />;
-                })) : (<p> Could Not Get Data </p>)
-                }
-            </div>
-        );
+                    {domainObj ? (Object.keys(domainObj).map(function (keyName, keyIndex) {
+                        // Use keyName to get current key's name, domainObj[keyName] to get value
+                        return <DomainCard
+                            isSelected={true}
+                            statsIcon="fa fa-history"
+                            key={keyIndex}
+                            statusCode={domainObj[keyName].Status}
+                            statusInfo={domainObj[keyName]}
+                            id={keyName}
+                            domain={keyName}
+                            cardText="Last Week"
+                            stats="Last Outage: "
+                        />
+                    })) : (<p> Could Not Get Data </p>)
+                    }
+                </div>
+            );
+        }
+
+
     }
 }
 
