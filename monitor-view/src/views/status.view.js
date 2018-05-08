@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import DomainCard from '../components/domain-card';
 import api from '../components/actions/api';
 import FacilityAutoComplete from './facilityAutoComplete';
+import Switch from 'material-ui/Switch';
+import {FormControlLabel} from 'material-ui/Form';
+
 
 class StatusView extends Component {
 
@@ -9,6 +12,9 @@ class StatusView extends Component {
         super(props);
         this.state = {
             domainObj: {},
+            weeklyDomainObj: {},
+            monthlyDomainObj: {},
+            showMonthly: false,
             lastUpdate: " ",
             selectedFacilities: [],
         };
@@ -18,11 +24,20 @@ class StatusView extends Component {
 
     // Get status data from monitor endpoint
     retrieve = () => {
+        // Get weekly status
         api.status.getStatusInfo().then(resp => {
             console.log(resp);
             this.setState({
                 domainObj: resp,
                 lastUpdate: resp["www.acadiahealthcare.com"].LastUpdate
+            });
+        });
+
+        // Get monthly status
+        api.status.getMonthlyStatusInfo().then(resp => {
+            console.log(resp);
+            this.setState({
+                monthlyDomainObj: resp
             });
         });
     };
@@ -35,6 +50,10 @@ class StatusView extends Component {
         console.log(val);
     };
 
+    handleShowMonthly = name => event => {
+        this.setState({[name]: event.target.checked});
+    };
+
     render() {
         const domainObj = this.state.domainObj;
         const selected = this.state.selectedFacilities;
@@ -43,7 +62,19 @@ class StatusView extends Component {
             return (
                 <div className="content">
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
+                    <FormControlLabel
+                        control={
+                            <Switch
+                                checked={this.state.showMonthly}
+                                onChange={this.handleShowMonthly('showMonthly')}
+                                value="showMonthly"
+                                color="primary"
+                            />
+                        }
+                        label="Toggle Monthly"
+                    />
                     <h4><code>Updated: {this.state.lastUpdate}</code></h4>
+
                     {
                         (Object.keys(domainObj).map(function (keyName, keyIndex) {
                             // check if facility name is in the selected list before it gets rendered
@@ -70,9 +101,23 @@ class StatusView extends Component {
             return (
                 <div className="content">
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
-                    <h4><code>Updated: {this.state.lastUpdate}</code></h4>
-                    {/* Check whether we have data to show, then create a card for each domain */}
+                    <FormControlLabel
+                        control={
+                            <Switch
+                                checked={this.state.showMonthly}
+                                onChange={this.handleShowMonthly('showMonthly')}
+                                value="showMonthly"
+                                color="primary"
+                            />
+                        }
+                        label="Toggle Monthly"
+                    />
+                    <h4>
+                        <code>Updated: {this.state.lastUpdate}</code>
+                    </h4>
 
+
+                    {/* Check whether we have data to show, then create a card for each domain */}
                     {domainObj ? (Object.keys(domainObj).map(function (keyName, keyIndex) {
                         // Use keyName to get current key's name, domainObj[keyName] to get value
                         return <DomainCard

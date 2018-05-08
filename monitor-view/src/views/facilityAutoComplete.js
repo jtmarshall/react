@@ -205,7 +205,7 @@ function getSuggestions(inputValue) {
     return suggestions.filter(suggestion => {
         const keep =
             (!inputValue || suggestion.label.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1) &&
-            count < 5;
+            count < 10;  // max suggestions to show
 
         if (keep) {
             count += 1;
@@ -222,11 +222,15 @@ class FacilityAutoComplete extends React.Component {
     };
 
     handleKeyDown = event => {
-        const { inputValue, selectedItem } = this.state;
+        let { inputValue, selectedItem } = this.state;
         if (selectedItem.length && !inputValue.length && keycode(event) === 'backspace') {
+            selectedItem = selectedItem.slice(0, selectedItem.length - 1);
             this.setState({
-                selectedItem: selectedItem.slice(0, selectedItem.length - 1),
+                selectedItem
             });
+
+            // Pass updated selected facilities back to parent component
+            this.props.onUpdate(selectedItem);
         }
     };
 
@@ -330,7 +334,7 @@ const styles = theme => ({
         marginLeft: "10%"
     },
     paper: {
-        position: 'absolute',
+        position: 'fixed',
         zIndex: 1,
         marginTop: theme.spacing.unit,
 

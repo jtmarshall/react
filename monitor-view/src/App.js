@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Monitor Status</h1>
+          <h1 className="App-title">Acadia Site Status</h1>
         </header>
         <Route path="/" exact render={()=><StatusView selected={this.state.SelectedFacilities} />} />
       </div>
