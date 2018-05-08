@@ -1,21 +1,26 @@
 import React, {Component} from "react";
-import {Bar, Line, Pie} from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 
 export class ReactChart extends Component {
     constructor(props){
         super(props);
-        const today = new Date();
+        let today = new Date();
+
+        let tempLabels = [];
+
+        // Generate date labels starting today and iterating back through length of data
+        for (let i = 0; i < this.props.chartData.length; i++) {
+            // parse date for how many days prior
+            today.setDate(today.getDate()-i);
+            tempLabels.unshift((today.getUTCMonth()+1) +"/"+ today.getDate());
+
+            // reset date back to current date
+            today = new Date();
+        }
+
         this.state = {
             chartData: {
-                labels: [
-                    (today.getUTCMonth()+1) +"/"+ (today.getDate()-6),
-                    (today.getUTCMonth()+1) +"/"+ (today.getDate()-5),
-                    (today.getUTCMonth()+1) +"/"+ (today.getDate()-4),
-                    (today.getUTCMonth()+1) +"/"+ (today.getDate()-3),
-                    (today.getUTCMonth()+1) +"/"+ (today.getDate()-2),
-                    (today.getUTCMonth()+1) +"/"+ (today.getDate()-1),
-                    (today.getUTCMonth()+1) +"/"+ today.getDate()
-                ],
+                labels: tempLabels,
                 datasets: [{
                     label: "Outages",
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
@@ -49,7 +54,9 @@ export class ReactChart extends Component {
                         distribution: 'series'
                     }],
                     yAxes: [{
-                        weight: 1,
+                        ticks: {
+                            beginAtZero: true,
+                        }
                     }]
                 }
             }

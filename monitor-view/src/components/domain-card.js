@@ -20,22 +20,21 @@ export class DomainCard extends Component {
                 <div className="header">
                     <h4 className="title">
                         <a href={"http://" + this.props.domain} target={"_blank"}>
-                        {this.props.statusInfo.FacilityName !== "" ?
-                        this.props.statusInfo.FacilityName : this.props.domain}
+                            {this.props.statusInfo.FacilityName !== "" ?
+                                this.props.statusInfo.FacilityName : this.props.domain}
                         </a>
                     </h4>
-                    <p className="category">{this.props.cardText}</p>
                 </div>
                 <div className={
-                        "content" +
-                        (this.props.ctAllIcons ? " all-icons" : "") +
-                        (this.props.ctTableFullWidth ? " table-full-width" : "") +
-                        (this.props.ctTableResponsive ? " table-responsive" : "") +
-                        (this.props.ctTableUpgrade ? " table-upgrade" : "")
-                    }
+                    "content" +
+                    (this.props.ctAllIcons ? " all-icons" : "") +
+                    (this.props.ctTableFullWidth ? " table-full-width" : "") +
+                    (this.props.ctTableResponsive ? " table-responsive" : "") +
+                    (this.props.ctTableUpgrade ? " table-upgrade" : "")
+                }
                 >
-                    <ReactChart chartData={this.props.statusInfo.GraphData}/>
 
+                    <ReactChart chartData={this.props.statusInfo.GraphData}/>
 
                     <div className="footer">
                         {this.props.stats != null ? <hr/> : ""}
@@ -49,9 +48,10 @@ export class DomainCard extends Component {
                                 </li>
                                 <li>
                                     <b>
-                                        <span style={{color: "#FF2323"}}>Out</span> / <span style={{color: "#ff6700"}}>Err: </span>
+                                        <span style={{color: "#FF2323"}}>Out</span> / <span
+                                        style={{color: "#ff6700"}}>Err: </span>
                                     </b>
-                                     {this.props.statusInfo.Outages} / {this.props.statusInfo.Errors}
+                                    {this.props.statusInfo.Outages} / {this.props.statusInfo.Errors}
                                 </li>
                             </ul>
                         </div>
