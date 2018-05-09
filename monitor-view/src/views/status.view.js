@@ -23,15 +23,16 @@ class StatusView extends Component {
     constructor(props) {
         super(props);
 
-        let savedFacilities = localStorage.getItem("selectedFacilities").length > 0 ?
-            localStorage.getItem("selectedFacilities").split(',') : [];
+        // Check local storage for saved facilities
+        let savedFacilities = localStorage.getItem("selectedFacilities") != null ?
+            localStorage.getItem("selectedFacilities") : [];
 
         this.state = {
             domainObj: {},
             monthlyDomainObj: {},
             showMonthly: false,
             lastUpdate: " ",
-            selectedFacilities: savedFacilities,
+            selectedFacilities: savedFacilities.length > 0 ? savedFacilities.split(',') : [],
             value: 0
         };
         // get status data obj on startup
