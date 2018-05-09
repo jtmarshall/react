@@ -48,3 +48,12 @@
     height: 80vh;
     width: 80vw;
 }
+
+
+@media only screen and (max-device-width: 667px) {
+    .domainCard {
+        width: 80vw !important;
+        margin: 2px !important;
+        border: 2px solid #00C853;
+    }
+}

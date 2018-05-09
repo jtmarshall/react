@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/src/views/status.view.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+              <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="facilityAutoComplete.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="facilityAutoComplete.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/facilityAutoComplete.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="218" column="47" selection-start-line="218" selection-start-column="47" selection-end-line="218" selection-end-column="47" />
+            <state relative-caret-position="503">
+              <caret line="238" column="9" lean-forward="true" selection-start-line="238" selection-start-column="9" selection-end-line="238" selection-end-column="9" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/index.html">
+      <file leaf-file-name="App.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="504" selection-start-column="504" selection-end-column="504" />
+            <state relative-caret-position="607">
+              <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -62,20 +62,11 @@
       <file leaf-file-name="domain-card.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/domain-card.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+            <state relative-caret-position="450">
+              <caret line="30" column="78" lean-forward="true" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="25" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -118,13 +109,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/components/actions/sample.js" />
         <option value="$PROJECT_DIR$/src/components/actions/sample.json" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/views/alphaBar.js" />
         <option value="$PROJECT_DIR$/src/components/charts/barChart.js" />
         <option value="$PROJECT_DIR$/src/components/charts/eChart.js" />
         <option value="$PROJECT_DIR$/src/components/charts/victory.js" />
         <option value="$PROJECT_DIR$/src/components/charts/nivo.js" />
-        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/components/actions/api.js" />
         <option value="$PROJECT_DIR$/src/components/charts/reactChart.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
@@ -133,6 +122,8 @@
         <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/src/views/status.view.js" />
         <option value="$PROJECT_DIR$/src/views/facilityAutoComplete.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/App.css" />
       </list>
     </option>
   </component>
@@ -263,12 +254,12 @@
       <workItem from="1524857833080" duration="898000" />
       <workItem from="1525104485689" duration="15735000" />
       <workItem from="1525298742977" duration="23613000" />
-      <workItem from="1525802597114" duration="6562000" />
+      <workItem from="1525802597114" duration="7878000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53769000" />
+    <option name="totallyTimeSpent" value="55085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="108" y="-1058" width="1572" height="1058" extended-state="0" />
@@ -522,13 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/actions/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -559,13 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -586,30 +563,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/domain-card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/favicon.ico">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="504" selection-start-column="504" selection-end-column="504" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/status.view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -618,11 +578,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/facilityAutoComplete.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="218" column="47" selection-start-line="218" selection-start-column="47" selection-end-line="218" selection-end-column="47" />
+        <state relative-caret-position="503">
+          <caret line="238" column="9" lean-forward="true" selection-start-line="238" selection-start-column="9" selection-end-line="238" selection-end-column="9" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="504" selection-start-column="504" selection-end-column="504" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/domain-card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="78" lean-forward="true" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
         </state>
       </provider>
     </entry>
