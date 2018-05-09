@@ -10,13 +10,15 @@ class App extends Component {
         SelectedFacilities: [],
     };
 
+    baseUrl = process.env.PUBLIC_URL;
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Acadia Site Status</h1>
         </header>
-        <Route path="/" exact render={()=><StatusView selected={this.state.SelectedFacilities} />} />
+        <Route path={this.baseUrl + "/"} exact render={()=><StatusView selected={this.state.SelectedFacilities} />} />
       </div>
     );
   }

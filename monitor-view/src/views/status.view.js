@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import DomainCard from '../components/domain-card';
 import api from '../components/actions/api';
 import FacilityAutoComplete from './facilityAutoComplete';
-import AppBar from 'material-ui/AppBar';
 import Tabs, {Tab} from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
@@ -24,17 +23,21 @@ class StatusView extends Component {
     constructor(props) {
         super(props);
 
+        let savedFacilities = localStorage.getItem("selectedFacilities").length > 0 ?
+            localStorage.getItem("selectedFacilities").split(',') : [];
+
         this.state = {
             domainObj: {},
             monthlyDomainObj: {},
             showMonthly: false,
             lastUpdate: " ",
-            selectedFacilities: [],
+            selectedFacilities: savedFacilities,
             value: 0
         };
         // get status data obj on startup
         this.retrieve();
     }
+
 
     // Get status data from monitor endpoint
     retrieve = () => {
@@ -82,7 +85,7 @@ class StatusView extends Component {
                     </Tabs>
                     {value === 0 && <TabContainer>
                         {
-                            (Object.keys(domainObj).map(function (keyName, keyIndex) {
+                            (Object.keys(domainObj).map((keyName, keyIndex) => {
                                 // check if facility name is in the selected list before it gets rendered
                                 if (selected.includes(domainObj[keyName].FacilityName)) {
                                     // Use keyName to get current key's name, domainObj[keyName] to get value
@@ -101,7 +104,7 @@ class StatusView extends Component {
                     </TabContainer>}
                     {value === 1 && <TabContainer>
                         {
-                            (Object.keys(monthlyDomainObj).map(function (keyName, keyIndex) {
+                            (Object.keys(monthlyDomainObj).map((keyName, keyIndex) => {
                                 // check if facility name is in the selected list before it gets rendered
                                 if (selected.includes(monthlyDomainObj[keyName].FacilityName)) {
                                     // Use keyName to get current key's name, domainObj[keyName] to get value
@@ -133,7 +136,7 @@ class StatusView extends Component {
                     </Tabs>
                     {value === 0 && <TabContainer>
                         {/* Check whether we have data to show, then create a card for each domain */}
-                        {domainObj ? (Object.keys(domainObj).map(function (keyName, keyIndex) {
+                        {domainObj ? (Object.keys(domainObj).map((keyName, keyIndex) => {
                             // Use keyName to get current key's name, domainObj[keyName] to get value
                             return <DomainCard
                                 isSelected={true}
@@ -149,7 +152,7 @@ class StatusView extends Component {
                     </TabContainer>}
                     {value === 1 && <TabContainer>
                         {/* Check whether we have data to show, then create a card for each domain */}
-                        {monthlyDomainObj ? (Object.keys(monthlyDomainObj).map(function (keyName, keyIndex) {
+                        {monthlyDomainObj ? (Object.keys(monthlyDomainObj).map((keyName, keyIndex) => {
                             // Use keyName to get current key's name, domainObj[keyName] to get value
                             return <DomainCard
                                 isSelected={true}

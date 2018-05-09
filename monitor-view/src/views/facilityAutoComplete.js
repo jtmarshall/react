@@ -218,7 +218,8 @@ function getSuggestions(inputValue) {
 class FacilityAutoComplete extends React.Component {
     state = {
         inputValue: '',
-        selectedItem: [],
+        selectedItem: localStorage.getItem("selectedFacilities").length > 0 ?
+            localStorage.getItem("selectedFacilities").split(',') : [],
     };
 
     handleKeyDown = event => {
@@ -231,6 +232,7 @@ class FacilityAutoComplete extends React.Component {
 
             // Pass updated selected facilities back to parent component
             this.props.onUpdate(selectedItem);
+            localStorage.setItem("selectedFacilities", selectedItem);
         }
     };
 
@@ -252,6 +254,7 @@ class FacilityAutoComplete extends React.Component {
 
         // Pass updated selected facilities back to parent component
         this.props.onUpdate(selectedItem);
+        localStorage.setItem("selectedFacilities", selectedItem);
     };
 
     handleDelete = item => () => {
@@ -262,6 +265,7 @@ class FacilityAutoComplete extends React.Component {
 
         // Pass updated selected facilities back to parent component
         this.props.onUpdate(selectedItem);
+        localStorage.setItem("selectedFacilities", selectedItem);
     };
 
     render() {
