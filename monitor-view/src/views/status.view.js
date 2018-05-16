@@ -47,7 +47,7 @@ class StatusView extends Component {
             console.log(resp);
             this.setState({
                 domainObj: resp,
-                lastUpdate: resp["www.acadiahealthcare.com"].LastUpdate
+                //lastUpdate: resp["www.acadiahealthcare.com"].LastUpdate
             });
         });
 
