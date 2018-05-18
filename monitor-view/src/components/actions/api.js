@@ -9,6 +9,7 @@ let fofURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/404list";
 if (document.location.host === "monitor.acadiadevelopment.com") {
     statusURL = "http://" + document.location.host + "/monitorstatus";
     monthlyStatusURL = "http://" + document.location.host + "/monthlymonitorstatus";
+    fofURL = "http://" + document.location.host + "/404list";
 }
 
 
@@ -29,7 +30,9 @@ export default {
                 .catch(function (err) {
                     console.log("GET MonthlyStatus ERR: ", err);
                 })
-        },
+        }
+    },
+    fof: {
         get404List: () => {
             return axios.get(fofURL).then((resp) => {
                 return resp.data;

@@ -49,6 +49,16 @@
     width: 80vw;
 }
 
+.fof {
+
+    margin: 1em;
+    overflow: auto;
+}
+
+.fofTable {
+    min-width: 700px;
+}
+
 
 @media only screen and (max-device-width: 667px) {
     .domainCard {

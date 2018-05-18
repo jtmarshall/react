@@ -4,6 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/material-dashboard.css';
 import StatusView from './views/status.view';
+import FofView from './views/fof.view';
 import Nav from './nav/nav';
 
 class App extends Component {
@@ -16,11 +17,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Nav />
+
         <header className="App-header">
-          <h1 className="App-title">Acadia Site Status</h1>
+          <h1 className="App-title">Acadia Monitoring</h1>
         </header>
         <Route path={this.baseUrl + "/"} exact render={()=><StatusView selected={this.state.SelectedFacilities} />} />
+          <Route path={this.baseUrl + "/404"} component={FofView}/>
       </div>
     );
   }
