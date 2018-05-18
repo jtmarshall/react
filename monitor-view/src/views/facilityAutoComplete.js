@@ -7,8 +7,9 @@ import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import { MenuItem } from 'material-ui/Menu';
 import Chip from 'material-ui/Chip';
+import api from "../components/actions/api";
 
-const suggestions = [
+let suggestions = [
     { label: 'Acadia Healthcare' },
     { label: 'Acadia Montana' },
     { label: 'Acadiana' },
@@ -173,6 +174,22 @@ function renderInput(inputProps) {
     );
 }
 
+// Get list of facility/domain pairs
+function retrieveList() {
+    // Get weekly status
+    api.facility.getFacilityList().then(resp => {
+        suggestions = [];
+        for (let key in resp) {
+            suggestions.push(
+                {
+                    label: resp[key],
+                    url: key
+                }
+            )
+        }
+    });
+}
+
 function renderSuggestion({ suggestion, index, itemProps, highlightedIndex, selectedItem }) {
     const isHighlighted = highlightedIndex === index;
     const isSelected = (selectedItem || '').indexOf(suggestion.label) > -1;
@@ -215,7 +232,11 @@ function getSuggestions(inputValue) {
     });
 }
 
+
+retrieveList();
+
 class FacilityAutoComplete extends React.Component {
+
     // Check local storage for saved facilities
     savedFacilities = localStorage.getItem("selectedFacilities") != null ?
         localStorage.getItem("selectedFacilities") : [];

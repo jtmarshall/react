@@ -80,6 +80,7 @@ class StatusView extends Component {
         if (selected.length > 0) {
             return (
                 <div className="content">
+                    <h3>Site Status</h3>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
                     <h4><code>Updated: {moment(this.state.lastUpdate).format("lll")}</code></h4>
                     <Tabs value={value} onChange={this.handleChange} centered>
@@ -129,6 +130,7 @@ class StatusView extends Component {
         } else {
             return (
                 <div className="content">
+                    <h3>Site Status</h3>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
                     <h4>
                         <code>Updated: {this.state.lastUpdate}</code>

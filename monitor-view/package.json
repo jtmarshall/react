@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
     "@nivo/bar": "^0.33.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.0",
