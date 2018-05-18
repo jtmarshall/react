@@ -48,3 +48,22 @@
     height: 80vh;
     width: 80vw;
 }
+
+.fof {
+
+    margin: 1em;
+    overflow: auto;
+}
+
+.fofTable {
+    min-width: 700px;
+}
+
+
+@media only screen and (max-device-width: 667px) {
+    .domainCard {
+        width: 80vw !important;
+        margin: 2px !important;
+        border: 2px solid #00C853;
+    }
+}

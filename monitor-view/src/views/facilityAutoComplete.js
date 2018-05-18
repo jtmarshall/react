@@ -216,10 +216,13 @@ function getSuggestions(inputValue) {
 }
 
 class FacilityAutoComplete extends React.Component {
+    // Check local storage for saved facilities
+    savedFacilities = localStorage.getItem("selectedFacilities") != null ?
+        localStorage.getItem("selectedFacilities") : [];
+
     state = {
         inputValue: '',
-        selectedItem: localStorage.getItem("selectedFacilities").length > 0 ?
-            localStorage.getItem("selectedFacilities").split(',') : [],
+        selectedItem: this.savedFacilities.length > 0 ? this.savedFacilities.split(',') : [],
     };
 
     handleKeyDown = event => {

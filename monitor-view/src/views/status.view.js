@@ -5,6 +5,7 @@ import FacilityAutoComplete from './facilityAutoComplete';
 import Tabs, {Tab} from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 function TabContainer(props) {
     return (
@@ -23,15 +24,16 @@ class StatusView extends Component {
     constructor(props) {
         super(props);
 
-        let savedFacilities = localStorage.getItem("selectedFacilities").length > 0 ?
-            localStorage.getItem("selectedFacilities").split(',') : [];
+        // Check local storage for saved facilities
+        let savedFacilities = localStorage.getItem("selectedFacilities") != null ?
+            localStorage.getItem("selectedFacilities") : [];
 
         this.state = {
             domainObj: {},
             monthlyDomainObj: {},
             showMonthly: false,
             lastUpdate: " ",
-            selectedFacilities: savedFacilities,
+            selectedFacilities: savedFacilities.length > 0 ? savedFacilities.split(',') : [],
             value: 0
         };
         // get status data obj on startup
@@ -43,10 +45,10 @@ class StatusView extends Component {
     retrieve = () => {
         // Get weekly status
         api.status.getStatusInfo().then(resp => {
-            console.log(resp);
+            // console.log(resp);
             this.setState({
                 domainObj: resp,
-                lastUpdate: resp["www.acadiahealthcare.com"].LastUpdate
+                //lastUpdate: resp["www.acadiahealthcare.com"].LastUpdate
             });
         });
 
@@ -66,6 +68,7 @@ class StatusView extends Component {
         console.log(val);
     };
 
+    // Updates tabs
     handleChange = (event, value) => {
         this.setState({value});
     };
@@ -78,7 +81,7 @@ class StatusView extends Component {
             return (
                 <div className="content">
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
-                    <h4><code>Updated: {this.state.lastUpdate}</code></h4>
+                    <h4><code>Updated: {moment(this.state.lastUpdate).format("lll")}</code></h4>
                     <Tabs value={value} onChange={this.handleChange} centered>
                         <Tab label="Weekly"/>
                         <Tab label="Monthly"/>

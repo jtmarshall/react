@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+nav > img {
+    display: block;
+    width: 50px;
+    height: auto;
+}
+
+nav a {
+    color: #FFFFFF;
+}
