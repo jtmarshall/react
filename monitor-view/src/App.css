@@ -9,7 +9,7 @@
 
 .App-header {
     background-color: #222;
-    height: 50px;
+    height: 70px;
     padding: 15px;
     color: white;
 }
@@ -49,8 +49,27 @@
     font-size: 1.1em !important;
 }
 
-.fof {
+.nav-drawer {
+    width: 250px;
+}
 
+.nav-drawer > *[class^='MuiPaper-']{
+    min-width: 240px;
+}
+
+.drawerPaper {
+    width: 250px;
+}
+
+.drawerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 8px;
+
+}
+
+.fof {
     margin: 1em;
     overflow: auto;
 }

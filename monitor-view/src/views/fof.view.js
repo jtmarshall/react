@@ -26,7 +26,6 @@ class FofView extends Component {
     retrieve = () => {
         // Request for 404's
         api.fof.get404List().then(resp => {
-            console.log(resp);
             this.setState({
                 fofList: resp
             });
@@ -47,7 +46,7 @@ class FofView extends Component {
 
         if (selected.length > 0) {
             return(
-                <div className="fof">
+                <div className="content">
                     <h3>404's</h3>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
                     {fof ? (Object.keys(fof).map((keyName, keyIndex) => {
@@ -66,7 +65,7 @@ class FofView extends Component {
             );
         } else {
             return(
-                <div className="fof">
+                <div className="content">
                     <h3>404's</h3>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
                     {fof ? (Object.keys(fof).map((keyName, keyIndex) => {
