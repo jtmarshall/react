@@ -4,6 +4,7 @@ import axios from "axios";  // request library
 let statusURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/monitorstatus";
 let monthlyStatusURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/monthlymonitorstatus";
 let fofURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/404list";
+let facilityListURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/getFacilities";
 
 // Check if we need to convert to relative url because basic auth
 if (document.location.host === "monitor.acadiadevelopment.com") {
@@ -14,6 +15,26 @@ if (document.location.host === "monitor.acadiadevelopment.com") {
 
 
 export default {
+    facility: {
+        getFacilityList: () => {
+            return axios.get(facilityListURL).then((resp) => {
+                return resp.data;
+            })
+                .catch(function (err) {
+                    console.log("GET Facility List ERR: ", err);
+                })
+        }
+    },
+    fof: {
+        get404List: () => {
+            return axios.get(fofURL).then((resp) => {
+                return resp.data;
+            })
+                .catch(function (err) {
+                    console.log("GET 404 ERR: ", err);
+                })
+        }
+    },
     status: {
         getStatusInfo: () => {
             return axios.get(statusURL).then((resp) => {
@@ -32,14 +53,4 @@ export default {
                 })
         }
     },
-    fof: {
-        get404List: () => {
-            return axios.get(fofURL).then((resp) => {
-                return resp.data;
-            })
-                .catch(function (err) {
-                    console.log("GET 404 ERR: ", err);
-                })
-        }
-    }
 }

@@ -26,7 +26,6 @@ class FofView extends Component {
     retrieve = () => {
         // Request for 404's
         api.fof.get404List().then(resp => {
-            console.log(resp);
             this.setState({
                 fofList: resp
             });
@@ -47,13 +46,14 @@ class FofView extends Component {
 
         if (selected.length > 0) {
             return(
-                <div className="fof">
+                <div className="content">
+                    <h3>404's</h3>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
                     {fof ? (Object.keys(fof).map((keyName, keyIndex) => {
-                        if (selected.includes(fof[keyName].FacilityName)) {
+                        if (selected.includes(fof[keyName][0].FacilityName.String)) {
                             // Use keyName to get current key's name, domainObj[keyName] to get value
                             return <FofTable
-                                facility={keyName}
+                                facility={fof[keyName][0].FacilityName.String}
                                 domain={keyName}
                                 key={keyIndex}
                                 data={fof[keyName]}
@@ -65,12 +65,13 @@ class FofView extends Component {
             );
         } else {
             return(
-                <div className="fof">
+                <div className="content">
+                    <h3>404's</h3>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
                     {fof ? (Object.keys(fof).map((keyName, keyIndex) => {
                             // Use keyName to get current key's name, domainObj[keyName] to get value
                             return <FofTable
-                                facility={keyName}
+                                facility={fof[keyName][0].FacilityName.String}
                                 domain={keyName}
                                 key={keyIndex}
                                 data={fof[keyName]}

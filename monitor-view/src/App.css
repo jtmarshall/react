@@ -4,13 +4,13 @@
 
 .App-logo {
     animation: App-logo-spin infinite 20s linear;
-    height: 80px;
+    height: 60px;
 }
 
 .App-header {
     background-color: #222;
-    height: 80px;
-    padding: 20px;
+    height: 70px;
+    padding: 15px;
     color: white;
 }
 
@@ -31,6 +31,13 @@
     }
 }
 
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    width: 80vw;
+}
+
 .domainCard {
     width: 24% !important;
     margin: 6px !important;
@@ -42,21 +49,37 @@
     font-size: 1.1em !important;
 }
 
-.chart-container {
-    position: relative;
-    margin: auto;
-    height: 80vh;
-    width: 80vw;
+.nav-drawer {
+    width: 250px;
+}
+
+.nav-drawer > *[class^='MuiPaper-']{
+    min-width: 240px;
+}
+
+.drawerPaper {
+    width: 250px;
+}
+
+.drawerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 8px;
+
 }
 
 .fof {
-
     margin: 1em;
     overflow: auto;
 }
 
 .fofTable {
     min-width: 700px;
+}
+
+h1 a {
+    color: #FFFFFF !important;
 }
 
 

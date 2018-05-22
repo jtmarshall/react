@@ -6,6 +6,7 @@ import Tabs, {Tab} from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 function TabContainer(props) {
     return (
@@ -80,11 +81,15 @@ class StatusView extends Component {
         if (selected.length > 0) {
             return (
                 <div className="content">
+                    <h3>Site Status</h3>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
                     <h4><code>Updated: {moment(this.state.lastUpdate).format("lll")}</code></h4>
                     <Tabs value={value} onChange={this.handleChange} centered>
                         <Tab label="Weekly"/>
                         <Tab label="Monthly"/>
+                        <Link to="/404">
+                            <Tab label="404 List"/>
+                        </Link>
                     </Tabs>
                     {value === 0 && <TabContainer>
                         {
@@ -129,6 +134,7 @@ class StatusView extends Component {
         } else {
             return (
                 <div className="content">
+                    <h3>Site Status</h3>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
                     <h4>
                         <code>Updated: {this.state.lastUpdate}</code>
@@ -136,6 +142,9 @@ class StatusView extends Component {
                     <Tabs value={value} onChange={this.handleChange} centered>
                         <Tab label="Weekly"/>
                         <Tab label="Monthly"/>
+                        <Link to="/404">
+                            <Tab label="404 List"/>
+                        </Link>
                     </Tabs>
                     {value === 0 && <TabContainer>
                         {/* Check whether we have data to show, then create a card for each domain */}
