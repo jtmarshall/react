@@ -152,7 +152,6 @@ class FacilityAutoComplete extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
         const { inputValue, selectedItem } = this.state;
 
         return (
@@ -168,7 +167,6 @@ class FacilityAutoComplete extends React.Component {
                     <div className='autoComplete-container'>
                         {renderInput({
                             fullWidth: true,
-                            classes,
                             InputProps: getInputProps({
                                 startAdornment: selectedItem.map(item => (
                                     <Chip
@@ -204,9 +202,5 @@ class FacilityAutoComplete extends React.Component {
         );
     }
 }
-
-FacilityAutoComplete.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
 
 export default FacilityAutoComplete;

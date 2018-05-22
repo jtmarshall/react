@@ -8,7 +8,6 @@ import Paper from '@material-ui/core/Paper';
 import moment from 'moment';
 
 
-
 export class FofTable extends Component {
     render() {
         return (
