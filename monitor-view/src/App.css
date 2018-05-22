@@ -22,6 +22,33 @@
     font-size: large;
 }
 
+.autoComplete {
+    flex-grow: 1;
+    height: 250px;
+}
+
+.autoComplete-container {
+    flex-grow: 1;
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.autoComplete-paper {
+    position: fixed;
+    z-index: 1;
+    margin-top: 2px;
+}
+.autoComplete-chip {
+    margin: 2px 4px;
+}
+
+.autoComplete-inputRoot {
+    padding-top: 10px;
+    flex-wrap: wrap;
+}
+
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);

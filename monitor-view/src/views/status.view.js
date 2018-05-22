@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import DomainCard from '../components/domain-card';
 import api from '../components/actions/api';
-import FacilityAutoComplete from './facilityAutoComplete';
 import Tabs, {Tab} from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function TabContainer(props) {
     return (
@@ -25,16 +24,11 @@ class StatusView extends Component {
     constructor(props) {
         super(props);
 
-        // Check local storage for saved facilities
-        let savedFacilities = localStorage.getItem("selectedFacilities") != null ?
-            localStorage.getItem("selectedFacilities") : [];
-
         this.state = {
             domainObj: {},
             monthlyDomainObj: {},
             showMonthly: false,
             lastUpdate: " ",
-            selectedFacilities: savedFacilities.length > 0 ? savedFacilities.split(',') : [],
             value: 0
         };
         // get status data obj on startup
@@ -49,7 +43,6 @@ class StatusView extends Component {
             // console.log(resp);
             this.setState({
                 domainObj: resp,
-                //lastUpdate: resp["www.acadiahealthcare.com"].LastUpdate
             });
         });
 
@@ -61,28 +54,19 @@ class StatusView extends Component {
         });
     };
 
-    // Updates the selected facility list
-    selectedUpdate = (val) => {
-        this.setState({
-            selectedFacilities: val
-        });
-        console.log(val);
-    };
-
     // Updates tabs
     handleChange = (event, value) => {
         this.setState({value});
     };
 
     render() {
-        const selected = this.state.selectedFacilities;
+        const selected = this.props.selected;
         const {value, domainObj, monthlyDomainObj} = this.state;
 
         if (selected.length > 0) {
             return (
                 <div className="content">
                     <h3>Site Status</h3>
-                    <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
                     <h4><code>Updated: {moment(this.state.lastUpdate).format("lll")}</code></h4>
                     <Tabs value={value} onChange={this.handleChange} centered>
                         <Tab label="Weekly"/>
@@ -92,41 +76,39 @@ class StatusView extends Component {
                         </Link>
                     </Tabs>
                     {value === 0 && <TabContainer>
-                        {
-                            (Object.keys(domainObj).map((keyName, keyIndex) => {
-                                // check if facility name is in the selected list before it gets rendered
-                                if (selected.includes(domainObj[keyName].FacilityName)) {
-                                    // Use keyName to get current key's name, domainObj[keyName] to get value
-                                    return <DomainCard
-                                        isSelected={true}
-                                        statsIcon="fa fa-history"
-                                        key={keyIndex}
-                                        statusCode={domainObj[keyName].Status}
-                                        statusInfo={domainObj[keyName]}
-                                        id={keyName}
-                                        domain={keyName}
-                                    />
-                                }
-                            }))
+                        {domainObj ? (Object.keys(domainObj).map((keyName, keyIndex) => {
+                            // check if facility name is in the selected list before it gets rendered
+                            if (selected.includes(domainObj[keyName].FacilityName)) {
+                                // Use keyName to get current key's name, domainObj[keyName] to get value
+                                return (<DomainCard
+                                    isSelected={true}
+                                    statsIcon="fa fa-history"
+                                    key={keyIndex}
+                                    statusCode={domainObj[keyName].Status}
+                                    statusInfo={domainObj[keyName]}
+                                    id={keyName}
+                                    domain={keyName}
+                                />);
+                            }
+                        })) : (<p> Could Not Get Data </p>)
                         }
                     </TabContainer>}
                     {value === 1 && <TabContainer>
-                        {
-                            (Object.keys(monthlyDomainObj).map((keyName, keyIndex) => {
-                                // check if facility name is in the selected list before it gets rendered
-                                if (selected.includes(monthlyDomainObj[keyName].FacilityName)) {
-                                    // Use keyName to get current key's name, domainObj[keyName] to get value
-                                    return <DomainCard
-                                        isSelected={true}
-                                        statsIcon="fa fa-history"
-                                        key={keyIndex}
-                                        statusCode={monthlyDomainObj[keyName].Status}
-                                        statusInfo={monthlyDomainObj[keyName]}
-                                        id={keyName}
-                                        domain={keyName}
-                                    />
-                                }
-                            }))
+                        {monthlyDomainObj ? (Object.keys(monthlyDomainObj).map((keyName, keyIndex) => {
+                            // check if facility name is in the selected list before it gets rendered
+                            if (selected.includes(monthlyDomainObj[keyName].FacilityName)) {
+                                // Use keyName to get current key's name, domainObj[keyName] to get value
+                                return (<DomainCard
+                                    isSelected={true}
+                                    statsIcon="fa fa-history"
+                                    key={keyIndex}
+                                    statusCode={monthlyDomainObj[keyName].Status}
+                                    statusInfo={monthlyDomainObj[keyName]}
+                                    id={keyName}
+                                    domain={keyName}
+                                />);
+                            }
+                        })) : (<p> Could Not Get Data </p>)
                         }
                     </TabContainer>}
                 </div>
@@ -135,7 +117,6 @@ class StatusView extends Component {
             return (
                 <div className="content">
                     <h3>Site Status</h3>
-                    <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
                     <h4>
                         <code>Updated: {this.state.lastUpdate}</code>
                     </h4>
@@ -150,7 +131,7 @@ class StatusView extends Component {
                         {/* Check whether we have data to show, then create a card for each domain */}
                         {domainObj ? (Object.keys(domainObj).map((keyName, keyIndex) => {
                             // Use keyName to get current key's name, domainObj[keyName] to get value
-                            return <DomainCard
+                            return (<DomainCard
                                 isSelected={true}
                                 statsIcon="fa fa-history"
                                 key={keyIndex}
@@ -158,7 +139,7 @@ class StatusView extends Component {
                                 statusInfo={domainObj[keyName]}
                                 id={keyName}
                                 domain={keyName}
-                            />
+                            />);
                         })) : (<p> Could Not Get Data </p>)
                         }
                     </TabContainer>}
@@ -166,7 +147,7 @@ class StatusView extends Component {
                         {/* Check whether we have data to show, then create a card for each domain */}
                         {monthlyDomainObj ? (Object.keys(monthlyDomainObj).map((keyName, keyIndex) => {
                             // Use keyName to get current key's name, domainObj[keyName] to get value
-                            return <DomainCard
+                            return (<DomainCard
                                 isSelected={true}
                                 statsIcon="fa fa-history"
                                 key={keyIndex}
@@ -174,7 +155,7 @@ class StatusView extends Component {
                                 statusInfo={monthlyDomainObj[keyName]}
                                 id={keyName}
                                 domain={keyName}
-                            />
+                            />);
                         })) : (<p> Could Not Get Data </p>)
                         }
                     </TabContainer>}

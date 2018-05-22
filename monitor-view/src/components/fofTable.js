@@ -8,12 +8,11 @@ import Paper from '@material-ui/core/Paper';
 import moment from 'moment';
 
 
-
 export class FofTable extends Component {
     render() {
         return (
             <Paper className="fof">
-                <h4 className="title">
+                <h4>
                     {this.props.facility}
                 </h4>
                 <Table className="fofTable">
