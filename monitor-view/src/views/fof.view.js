@@ -15,7 +15,7 @@ class FofView extends Component {
 
         this.state = {
             fofList: {},
-            selectedFacilities: savedFacilities.length > 0 ? savedFacilities.split(',') : [],
+            selectedFacilities: props.selected,
         };
 
         // Initiate request on startup
@@ -41,23 +41,23 @@ class FofView extends Component {
     };
 
     render() {
-        const selected = this.state.selectedFacilities;
-        const fof = this.state.fofList;
+        let selected = this.state.selectedFacilities;
+        let fof = this.state.fofList;
 
         if (selected.length > 0) {
             return(
                 <div className="content">
                     <h3>404's</h3>
-                    <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
+                    {/*<FacilityAutoComplete onUpdate={this.selectedUpdate}/>*/}
                     {fof ? (Object.keys(fof).map((keyName, keyIndex) => {
                         if (selected.includes(fof[keyName][0].FacilityName.String)) {
                             // Use keyName to get current key's name, domainObj[keyName] to get value
-                            return <FofTable
+                            return (<FofTable
                                 facility={fof[keyName][0].FacilityName.String}
                                 domain={keyName}
                                 key={keyIndex}
                                 data={fof[keyName]}
-                            />
+                            />);
                         }
                     })) : (<p> Could Not Get Data </p>)
                     }
@@ -65,17 +65,17 @@ class FofView extends Component {
             );
         } else {
             return(
-                <div className="content">
+                <div>
                     <h3>404's</h3>
-                    <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
+                    {/*<FacilityAutoComplete onUpdate={this.selectedUpdate}/>*/}
                     {fof ? (Object.keys(fof).map((keyName, keyIndex) => {
                             // Use keyName to get current key's name, domainObj[keyName] to get value
-                            return <FofTable
+                            return (<FofTable
                                 facility={fof[keyName][0].FacilityName.String}
                                 domain={keyName}
                                 key={keyIndex}
                                 data={fof[keyName]}
-                            />
+                            />);
                     })) : (<p> Could Not Get Data </p>)
                     }
                 </div>

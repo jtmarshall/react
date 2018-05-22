@@ -7,11 +7,22 @@ import StatusView from './views/status.view';
 import FofView from './views/fof.view';
 import { Link } from 'react-router-dom';
 import Nav from './nav/nav-drawer';
+import FacilityAutoComplete from './views/facilityAutoComplete';
 
 
 class App extends Component {
+
     state = {
-        SelectedFacilities: [],
+        SelectedFacilities: localStorage.getItem("selectedFacilities") != null ?
+            localStorage.getItem("selectedFacilities") : [],
+    };
+
+    // Updates the selected facility list
+    selectedUpdate = (val) => {
+        this.setState({
+            selectedFacilities: val
+        });
+        console.log(val);
     };
 
     baseUrl = process.env.PUBLIC_URL;
@@ -26,7 +37,7 @@ class App extends Component {
               </Link>
           </h1>
         </header>
-
+          <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
           <Switch>
               <Route exact path={this.baseUrl + "/"} render={()=><StatusView selected={this.state.SelectedFacilities} />} />
               <Route path='/404' render={()=><FofView selected={this.state.SelectedFacilities} />} />

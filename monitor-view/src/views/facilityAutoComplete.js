@@ -2,170 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
 import Downshift from 'downshift';
-import { withStyles } from 'material-ui/styles';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import { MenuItem } from 'material-ui/Menu';
 import Chip from 'material-ui/Chip';
 import api from "../components/actions/api";
 
-let suggestions = [
-    { label: 'Acadia Healthcare' },
-    { label: 'Acadia Montana' },
-    { label: 'Acadiana' },
-    { label: 'Vermilion' },
-    { label: 'Anchorage CTC' },
-    { label: 'Ann Arbor CTC' },
-    { label: 'Ascent' },
-    { label: 'Azure Acres' },
-    { label: 'Baton Rouge CTC' },
-    { label: 'Bayside Marin' },
-    { label: 'Belle of Oaks' },
-    { label: 'Belmont' },
-    { label: 'Beloit CTC' },
-    { label: 'Blue Ridge' },
-    { label: 'Boston CTC' },
-    { label: 'Bowling Green' },
-    { label: 'Brattleboro CTC' },
-    { label: 'Burkwood' },
-    { label: 'The Camp' },
-    { label: 'Cape Cod CTC' },
-    { label: 'Carolina House' },
-    { label: 'Cartersville CTC' },
-    { label: 'Cascade' },
-    { label: 'Cedar Crest' },
-    { label: 'Cedar Rapids CTC' },
-    { label: 'Center for Hope' },
-    { label: 'Centerpointe' },
-    { label: 'Central Virginia CTC' },
-    { label: 'Christian Addiction' },
-    { label: 'Claymont CTC' },
-    { label: 'Cove Forge' },
-    { label: 'Covington' },
-    { label: 'CRC Health' },
-    { label: 'Crestwyn' },
-    { label: 'Cross Creek' },
-    { label: 'Wichita CTC' },
-    { label: 'Detroit Behavioral' },
-    { label: 'Delta' },
-    { label: 'Desert Hills' },
-    { label: 'Drug-Addiction' },
-    { label: 'Drug-Rehabs' },
-    { label: 'Duffys' },
-    { label: 'East Wisconsin CTC' },
-    { label: 'North West Wisconsin CTC' },
-    { label: 'Fitchburg CTC' },
-    { label: 'Four Circles' },
-    { label: 'Galax' },
-    { label: 'Greenleaf' },
-    { label: 'Harbor Oaks' },
-    { label: 'Harmony' },
-    { label: 'Highland Ridge' },
-    { label: 'Huntington Creek' },
-    { label: 'Indiana CTC' },
-    { label: 'Inland Empire CTC' },
-    { label: 'North Florida CTC' },
-    { label: 'Keystone' },
-    { label: 'Lakeland' },
-    { label: 'Lakeview' },
-    { label: 'Life Healing' },
-    { label: 'Longleaf' },
-    { label: 'Madison CTC' },
-    { label: 'Maine CTC' },
-    { label: 'Maryland CTC' },
-    { label: 'Meadow Wood' },
-    { label: 'Medford CTC' },
-    { label: 'Methadone-Clinic' },
-    { label: 'Millcreek Behavioral' },
-    { label: 'Millcreek of Magee' },
-    { label: 'Millcreek of Pontotoc' },
-    { label: 'Milwaukee CTC' },
-    { label: 'Mirror Lake' },
-    { label: 'Montecatini' },
-    { label: 'Mount Regis' },
-    { label: 'Northeast Massachusetts CTC' },
-    { label: 'Northeast Pennsylvania CTC' },
-    { label: 'New Hampshire CTC' },
-    { label: 'North Tampa' },
-    { label: 'Oasis' },
-    { label: 'Ohio Hospital' },
-    { label: 'Options' },
-    { label: 'Pacific Grove' },
-    { label: 'Desert CTC' },
-    { label: 'Park Royal' },
-    { label: 'Physician Career Line' },
-    { label: 'Piney Ridge' },
-    { label: 'Pocono' },
-    { label: 'Portland CTC' },
-    { label: 'Racine CTC' },
-    { label: 'Rebound' },
-    { label: 'Red River' },
-    { label: 'Resolute' },
-    { label: 'Resource' },
-    { label: 'Riverview' },
-    { label: 'Riverwoods' },
-    { label: 'Rolling Hills' },
-    { label: 'The Rose' },
-    { label: 'Sacramento CTC' },
-    { label: 'Sandhills CTC' },
-    { label: 'San Diego CTC' },
-    { label: 'San Jose' },
-    { label: 'San Juan Capestrano' },
-    { label: 'Southeast Massachusetts CTC' },
-    { label: 'Southeastern Pennsylvania CTC' },
-    { label: 'Serenity House' },
-    { label: 'Serenity Knolls' },
-    { label: 'Seven Hills' },
-    { label: 'Shaker Clinic' },
-    { label: 'Sierra Tucson' },
-    { label: 'The Landing' },
-    { label: 'Sober Living' },
-    { label: 'Sonora' },
-    { label: 'South Amboy CTC' },
-    { label: 'Southcoast Behavioral' },
-    { label: 'Southern California CTC' },
-    { label: 'Southwood' },
-    { label: 'Spokane CTC' },
-    { label: 'Springfield CTC' },
-    { label: 'Starlite' },
-    { label: 'StoneCrest' },
-    { label: 'Structure House' },
-    { label: 'Sunrise' },
-    { label: 'SUWS Carolina' },
-    { label: 'Temecula CTC' },
-    { label: 'Ten Lakes' },
-    { label: 'Manor Clinic' },
-    { label: 'The Refuge' },
-    { label: 'Timberline Knolls' },
-    { label: 'Treatment Placement Specialists' },
-    { label: 'Twelve Oaks' },
-    { label: 'Utah CTC' },
-    { label: 'Valley' },
-    { label: 'Vantage Point' },
-    { label: 'Village' },
-    { label: 'Wausau CTC' },
-    { label: 'Wellness' },
-    { label: 'Western North Carolina CTC' },
-    { label: 'Western Michigan CTC' },
-    { label: 'Western Pennsylvania CTC' },
-    { label: 'Western Virginia CTC' },
-    { label: 'Western Washington CTC' },
-    { label: 'West Virginia CTC' },
-    { label: 'White Deer Run' },
-    { label: 'Willamette Valley CTC' },
-    { label: 'Wilmington' },
-    { label: 'Youth Care' },
-];
+let suggestions = [];
 
 function renderInput(inputProps) {
-    const { InputProps, classes, ref, ...other } = inputProps;
+    const { InputProps, ref, ...other } = inputProps;
 
     return (
         <TextField
             InputProps={{
                 inputRef: ref,
                 classes: {
-                    root: classes.inputRoot,
+                    root: 'autoComplete-inputRoot',
                 },
                 ...InputProps,
             }}
@@ -233,9 +86,15 @@ function getSuggestions(inputValue) {
 }
 
 
-retrieveList();
-
 class FacilityAutoComplete extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        if (suggestions.length < 1) {
+            retrieveList();
+        }
+    }
 
     // Check local storage for saved facilities
     savedFacilities = localStorage.getItem("selectedFacilities") != null ?
@@ -306,7 +165,7 @@ class FacilityAutoComplete extends React.Component {
                       selectedItem: selectedItem2,
                       highlightedIndex,
                   }) => (
-                    <div className={classes.container}>
+                    <div className='autoComplete-container'>
                         {renderInput({
                             fullWidth: true,
                             classes,
@@ -316,7 +175,7 @@ class FacilityAutoComplete extends React.Component {
                                         key={item}
                                         tabIndex={-1}
                                         label={item}
-                                        className={classes.chip}
+                                        className='autoComplete-chip'
                                         onDelete={this.handleDelete(item)}
                                     />
                                 )),
@@ -327,7 +186,7 @@ class FacilityAutoComplete extends React.Component {
                             }),
                         })}
                         {isOpen ? (
-                            <Paper className={classes.paper} square>
+                            <Paper className='autoComplete-paper' square>
                                 {getSuggestions(inputValue2).map((suggestion, index) =>
                                     renderSuggestion({
                                         suggestion,
@@ -350,29 +209,4 @@ FacilityAutoComplete.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-const styles = theme => ({
-    root: {
-        flexGrow: 1,
-        height: 250
-    },
-    container: {
-        flexGrow: 1,
-        position: 'relative',
-        width: "80%",
-        marginLeft: "10%"
-    },
-    paper: {
-        position: 'fixed',
-        zIndex: 1,
-        marginTop: theme.spacing.unit,
-
-    },
-    chip: {
-        margin: `${theme.spacing.unit / 2}px ${theme.spacing.unit / 4}px`,
-    },
-    inputRoot: {
-        flexWrap: 'wrap',
-    },
-});
-
-export default withStyles(styles)(FacilityAutoComplete);
+export default FacilityAutoComplete;
