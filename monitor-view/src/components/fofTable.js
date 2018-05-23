@@ -11,7 +11,7 @@ import moment from 'moment';
 export class FofTable extends Component {
     render() {
         return (
-            <Paper className="fof">
+            <Paper>
                 <h4>
                     {this.props.facility}
                 </h4>
