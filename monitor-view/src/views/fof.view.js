@@ -29,7 +29,7 @@ class FofView extends Component {
         let selected = this.props.selected;
         let fof = this.state.fofList;
 
-        if (selected.length > 0) {
+        if (this.props.selected.length > 0) {
             return (
                 <div className="content">
                     <h3>404's</h3>
