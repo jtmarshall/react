@@ -4,13 +4,12 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import moment from 'moment';
 
 
 function FofTable(props) {
     return (
-        <Paper className="fof">
+        <div className="fof">
             <h4>
                 {props.facility}
             </h4>
@@ -23,10 +22,10 @@ function FofTable(props) {
                         <TableCell>Time</TableCell>
                     </TableRow>
                 </TableHead>
-                <TableBody>
+                <tbody>
                     {Object.keys(props.data).map((keyName, keyIndex) => {
                         return (
-                            <TableRow key={keyName}>
+                            <tr key={keyName}>
                                 <TableCell component="th">{keyName}</TableCell>
                                 <TableCell>
                                     <a href={props.data[keyIndex].Page.String} target={"_blank"}>
@@ -39,12 +38,12 @@ function FofTable(props) {
                                     </a>
                                 </TableCell>
                                 <TableCell>{moment(props.data[keyIndex].TimeStamp).format("lll")}</TableCell>
-                            </TableRow>
+                            </tr>
                         );
                     })}
-                </TableBody>
+                </tbody>
             </Table>
-        </Paper>
+        </div>
     );
 }
 

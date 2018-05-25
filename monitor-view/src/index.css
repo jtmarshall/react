@@ -53,6 +53,7 @@ body {
 .autoComplete-inputRoot {
   padding-top: 10px;
   flex-wrap: wrap;
+  height: 42px !important;
 }
 
 
@@ -102,14 +103,24 @@ body {
 .fof {
   margin: 1em;
   overflow: auto;
-  width: auto;
+  margin-left: 1%;
+  width: 98%;
   background-color: #FFFFFF;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 }
 
 .fofTable {
   min-width: 700px;
   display: table !important;
   position: unset !important;
+}
+
+.fofTable tr {
+  padding: 6px;
+}
+
+.fofTable td {
+  font-size: .9em;
 }
 
 h1 a {
