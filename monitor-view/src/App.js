@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Route, Switch, Link} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 import StatusView from './views/status.view';
 import FofView from './views/fof.view';
-import Nav from './nav/nav-drawer';
+// import Nav from './nav/nav-drawer';
 import FacilityAutoComplete from './views/facilityAutoComplete';
 
 
@@ -40,10 +40,9 @@ class App extends Component {
 
                 <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
 
-                <Switch>
-                    <Route exact path='/' render={() => <StatusView selected={this.state.SelectedFacilities}/>}/>
-                    <Route path='/:404' render={() => <FofView selected={this.state.SelectedFacilities}/>}/>
-                </Switch>
+
+                <Route path='/404' render={() => <FofView selected={this.state.SelectedFacilities}/>}/>
+                <Route exact path='/' render={() => <StatusView selected={this.state.SelectedFacilities}/>}/>
             </div>
         );
     }
