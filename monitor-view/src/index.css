@@ -100,6 +100,7 @@ body {
 
 }
 
+/* 404 View Styles */
 .fof {
   margin: 1em;
   overflow: auto;
@@ -110,17 +111,29 @@ body {
 }
 
 .fofTable {
+  width: 100%;
   min-width: 700px;
   display: table !important;
   position: unset !important;
 }
 
+.fofTable thead {
+  font-size: .8em;
+}
+
 .fofTable tr {
-  padding: 6px;
+  text-align: left;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+
+.fofTable th {
+  padding: 8px;
 }
 
 .fofTable td {
+  padding: 4px 10px;
   font-size: .9em;
+
 }
 
 h1 a {

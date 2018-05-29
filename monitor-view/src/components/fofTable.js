@@ -1,9 +1,4 @@
 import React from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
 import moment from 'moment';
 
 
@@ -13,36 +8,36 @@ function FofTable(props) {
             <h4>
                 {props.facility}
             </h4>
-            <Table className="fofTable">
-                <TableHead>
-                    <TableRow>
-                        <TableCell component="th"></TableCell>
-                        <TableCell>404 Link</TableCell>
-                        <TableCell>Referred From / Found On</TableCell>
-                        <TableCell>Time</TableCell>
-                    </TableRow>
-                </TableHead>
+            <table className="fofTable">
+                <thead>
+                    <tr>
+                        <th component="th"></th>
+                        <td>404 Link</td>
+                        <td>Referred From / Found On</td>
+                        <td>Time</td>
+                    </tr>
+                </thead>
                 <tbody>
                     {Object.keys(props.data).map((keyName, keyIndex) => {
                         return (
                             <tr key={keyName}>
-                                <TableCell component="th">{keyName}</TableCell>
-                                <TableCell>
+                                <th>{keyName}</th>
+                                <td>
                                     <a href={props.data[keyIndex].Page.String} target={"_blank"}>
                                         {props.data[keyIndex].Page.String}
                                     </a>
-                                </TableCell>
-                                <TableCell>
+                                </td>
+                                <td>
                                     <a href={props.data[keyIndex].Referer.String} target={"_blank"}>
                                         {props.data[keyIndex].Referer.String}
                                     </a>
-                                </TableCell>
-                                <TableCell>{moment(props.data[keyIndex].TimeStamp).format("lll")}</TableCell>
+                                </td>
+                                <td>{moment(props.data[keyIndex].TimeStamp).format("lll")}</td>
                             </tr>
                         );
                     })}
                 </tbody>
-            </Table>
+            </table>
         </div>
     );
 }
