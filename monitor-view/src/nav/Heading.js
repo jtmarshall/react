@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
-import {Route, Link} from 'react-router-dom';
-import StatusView from './views/status.view';
-import FofView from './views/fof.view';
-// import Nav from './nav/nav-drawer';
-import FacilityAutoComplete from './views/facilityAutoComplete';
+import {Link} from 'react-router-dom';
+import FacilityAutoComplete from '../views/facilityAutoComplete';
 
 
-class App extends Component {
+class Heading extends Component {
 
     state = {
         SelectedFacilities: localStorage.getItem("selectedFacilities") != null ?
@@ -31,15 +28,16 @@ class App extends Component {
                         <Link to="/">
                             Acadia Monitoring
                         </Link>
+                        {' '}
+                        <Link to="/404">
+                            404
+                        </Link>
                     </h1>
                 </header>
                 <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
-
-                <Route path='/404' render={() => <FofView selected={this.state.SelectedFacilities}/>}/>
-                <Route exact path='/' render={() => <StatusView selected={this.state.SelectedFacilities}/>}/>
             </div>
         );
     }
 }
 
-export default App;
+export default Heading;
