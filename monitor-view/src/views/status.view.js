@@ -67,7 +67,6 @@ class StatusView extends Component {
             return (
                 <div className="content">
                     <h3>Site Status</h3>
-                    <h4><code>Updated: {moment(this.state.lastUpdate).format("lll")}</code></h4>
                     <Tabs value={value} onChange={this.handleChange} centered>
                         <Tab label="Weekly"/>
                         <Tab label="Monthly"/>
@@ -117,9 +116,6 @@ class StatusView extends Component {
             return (
                 <div className="content">
                     <h3>Site Status</h3>
-                    <h4>
-                        <code>Updated: {this.state.lastUpdate}</code>
-                    </h4>
                     <Tabs value={value} onChange={this.handleChange} centered>
                         <Tab label="Weekly"/>
                         <Tab label="Monthly"/>
