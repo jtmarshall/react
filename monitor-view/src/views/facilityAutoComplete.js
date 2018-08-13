@@ -4,14 +4,14 @@ import keycode from 'keycode';
 import Downshift from 'downshift';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
-import { MenuItem } from 'material-ui/Menu';
+import {MenuItem} from 'material-ui/Menu';
 import Chip from 'material-ui/Chip';
 import api from "../components/actions/api";
 
 let suggestions = [];
 
 function renderInput(inputProps) {
-    const { InputProps, ref, ...other } = inputProps;
+    const {InputProps, ref, ...other} = inputProps;
 
     return (
         <TextField
@@ -31,7 +31,28 @@ function renderInput(inputProps) {
 function retrieveList() {
     // Get weekly status
     api.facility.getFacilityList().then(resp => {
-        suggestions = [];
+        suggestions = [
+            {
+                label: "All CTC",
+                url: "ctc"
+            },
+            {
+                label: "All Inpatient",
+                url: "inpatient"
+            },
+            {
+                label: "All Residential Dual",
+                url: "residentialDual"
+            },
+            {
+                label: "All Residential SA",
+                url: "residentialSA"
+            },
+            {
+                label: "All Specialty",
+                url: "specialty"
+            }
+        ];
         for (let key in resp) {
             suggestions.push(
                 {
@@ -43,7 +64,7 @@ function retrieveList() {
     });
 }
 
-function renderSuggestion({ suggestion, index, itemProps, highlightedIndex, selectedItem }) {
+function renderSuggestion({suggestion, index, itemProps, highlightedIndex, selectedItem}) {
     const isHighlighted = highlightedIndex === index;
     const isSelected = (selectedItem || '').indexOf(suggestion.label) > -1;
 
@@ -61,12 +82,13 @@ function renderSuggestion({ suggestion, index, itemProps, highlightedIndex, sele
         </MenuItem>
     );
 }
+
 renderSuggestion.propTypes = {
     highlightedIndex: PropTypes.number,
     index: PropTypes.number,
     itemProps: PropTypes.object,
     selectedItem: PropTypes.string,
-    suggestion: PropTypes.shape({ label: PropTypes.string }).isRequired,
+    suggestion: PropTypes.shape({label: PropTypes.string}).isRequired,
 };
 
 function getSuggestions(inputValue) {
@@ -106,7 +128,7 @@ class FacilityAutoComplete extends React.Component {
     };
 
     handleKeyDown = event => {
-        let { inputValue, selectedItem } = this.state;
+        let {inputValue, selectedItem} = this.state;
         if (selectedItem.length && !inputValue.length && keycode(event) === 'backspace') {
             selectedItem = selectedItem.slice(0, selectedItem.length - 1);
             this.setState({
@@ -120,11 +142,11 @@ class FacilityAutoComplete extends React.Component {
     };
 
     handleInputChange = event => {
-        this.setState({ inputValue: event.target.value });
+        this.setState({inputValue: event.target.value});
     };
 
     handleChange = item => {
-        let { selectedItem } = this.state;
+        let {selectedItem} = this.state;
 
         if (selectedItem.indexOf(item) === -1) {
             selectedItem = [...selectedItem, item];
@@ -144,7 +166,7 @@ class FacilityAutoComplete extends React.Component {
         const selectedItem = [...this.state.selectedItem];
         selectedItem.splice(selectedItem.indexOf(item), 1);
 
-        this.setState({ selectedItem });
+        this.setState({selectedItem});
 
         // Pass updated selected facilities back to parent component
         this.props.onUpdate(selectedItem);
@@ -152,7 +174,7 @@ class FacilityAutoComplete extends React.Component {
     };
 
     render() {
-        const { inputValue, selectedItem } = this.state;
+        const {inputValue, selectedItem} = this.state;
 
         return (
             <Downshift inputValue={inputValue} onChange={this.handleChange} selectedItem={selectedItem}>
@@ -189,7 +211,7 @@ class FacilityAutoComplete extends React.Component {
                                     renderSuggestion({
                                         suggestion,
                                         index,
-                                        itemProps: getItemProps({ item: suggestion.label }),
+                                        itemProps: getItemProps({item: suggestion.label}),
                                         highlightedIndex,
                                         selectedItem: selectedItem2,
                                     }),
