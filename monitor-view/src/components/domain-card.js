@@ -48,10 +48,9 @@ export class DomainCard extends Component {
                                 </li>
                                 <li>
                                     <b>
-                                        <span style={{color: "#e83e8c"}}>Out</span> / <span
-                                        style={{color: "#ff6700"}}>Err: </span>
+                                        <span style={{color: "#e83e8c"}}>Outages: </span>
                                     </b>
-                                    {this.props.statusInfo.Outages} / {this.props.statusInfo.Errors}
+                                    {this.props.statusInfo.Outages}
                                 </li>
                             </ul>
                         </div>
