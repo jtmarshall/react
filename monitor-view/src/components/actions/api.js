@@ -2,6 +2,7 @@ import axios from "axios";  // request library
 
 // url for monitor status info endpoint
 let statusURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/monitorstatus";
+//let statusURL = "http://localhost:5555/api/monitorstatus";
 let monthlyStatusURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/monthlymonitorstatus";
 let fofURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/404list";
 let facilityListURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/getFacilities";

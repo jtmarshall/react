@@ -10,13 +10,16 @@ const errStyle = {
 };
 
 const ulStyle = {
-    textAlign: "left"
+    textAlign: "left",
+    listStyleType: "none",
+    margin: 0,
+    padding: "0 0 0 8px"
 };
 
 export class DomainCard extends Component {
     render() {
         return (
-            <div className="domainCard card" style={this.props.statusCode > 400 ? errStyle : cardStyle}>
+            <div className="domainCard card" style={this.props.statusCode > 399 ? errStyle : cardStyle}>
                 <div className="header">
                     <h4 className="title">
                         <a href={"http://" + this.props.domain} target={"_blank"}>
@@ -34,7 +37,7 @@ export class DomainCard extends Component {
                 }
                 >
 
-                    <ReactChart chartData={this.props.statusInfo.GraphData}/>
+                    <ReactChart chartData={this.props.statusInfo.GraphDataOutage} chartData404={this.props.statusInfo.GraphData404}/>
 
                     <div className="footer">
                         {this.props.stats != null ? <hr/> : ""}
@@ -44,13 +47,19 @@ export class DomainCard extends Component {
                                     <b>Status:</b> {this.props.statusInfo.Status}
                                 </li>
                                 <li>
-                                    <b>Response Time:</b> {this.props.statusInfo.AvgResponse}<i>ms</i>
+                                    <b>Response Time:</b> {this.props.statusInfo.AvgResponse.toFixed(2)}<i>ms</i>
                                 </li>
                                 <li>
                                     <b>
                                         <span style={{color: "#e83e8c"}}>Outages: </span>
                                     </b>
                                     {this.props.statusInfo.Outages}
+                                </li>
+                                <li>
+                                    <b>
+                                        <span style={{color: "#ff6700"}}>404: </span>
+                                    </b>
+                                    {this.props.statusInfo.Errors}
                                 </li>
                             </ul>
                         </div>
