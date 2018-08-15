@@ -21,7 +21,8 @@ export class ReactChart extends Component {
         this.state = {
             chartData: {
                 labels: tempLabels,
-                datasets: [{
+                datasets: [
+                    {
                     label: "Outages",
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                         // 'rgba(54, 162, 235, 0.2)',
@@ -39,7 +40,17 @@ export class ReactChart extends Component {
                     hoverBackgroundColor: "rgba(255,99,132,0.4)",
                     hoverBorderColor: "rgba(255,99,132,1)",
                     data: this.props.chartData,  // chart data comes from props in domain-card
-                }]
+                    },
+                    {
+                        label: "404",
+                        backgroundColor: 'rgba(255, 103, 0, 0.2)',
+                        borderColor: 'rgba(255, 103, 0, 1)',
+                        borderWidth: 2,
+                        hoverBackgroundColor: "rgba(255,99,132,0.4)",
+                        hoverBorderColor: "rgba(255,99,132,1)",
+                        data: this.props.chartData404,  // 404 chart data comes from props in domain-card
+                    },
+                ]
             },
             chartOptions: {
                 responsive: true,
