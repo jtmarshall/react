@@ -4,7 +4,6 @@ import api from '../components/actions/api';
 import Tabs, {Tab} from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import {Link} from 'react-router-dom';
 
 function TabContainer(props) {
@@ -73,6 +72,9 @@ class StatusView extends Component {
                         <Link to="/404">
                             <Tab label="404 List"/>
                         </Link>
+                        <Link to="/manual_crawl">
+                            <Tab label="Start Crawl"/>
+                        </Link>
                     </Tabs>
                     {value === 0 && <TabContainer>
                         {domainObj ? (Object.keys(domainObj).map((keyName, keyIndex) => {
@@ -121,6 +123,9 @@ class StatusView extends Component {
                         <Tab label="Monthly"/>
                         <Link to="/404">
                             <Tab label="404 List"/>
+                        </Link>
+                        <Link to="/manual_crawl">
+                            <Tab label="Start Crawl"/>
                         </Link>
                     </Tabs>
                     {value === 0 && <TabContainer>
