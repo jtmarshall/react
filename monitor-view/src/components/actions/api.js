@@ -6,16 +6,40 @@ let statusURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/monitorsta
 let monthlyStatusURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/monthlymonitorstatus";
 let fofURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/404list";
 let facilityListURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/getFacilities";
+let crawlURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/runCrawl";
 
 // Check if we need to convert to relative url because basic auth
 if (document.location.host === "monitor.acadiadevelopment.com") {
     statusURL = "http://" + document.location.host + "/api/monitorstatus";
     monthlyStatusURL = "http://" + document.location.host + "/api/monthlymonitorstatus";
     fofURL = "http://" + document.location.host + "/api/404list";
+    crawlURL = "http://" + document.location.host + "/api/runCrawl";
 }
 
 
 export default {
+    crawl: {
+        startCrawl: (domainToCrawl, userEmail) => {
+            // Set form data variable
+            let formData = new FormData();
+            formData.set('domain', domainToCrawl);
+            formData.set('email', userEmail);
+
+            return axios({
+                method: 'post',
+                url: crawlURL,
+                data: formData,
+                config: {headers: {'Content-Type': 'multipart/form-data'}}
+            })
+                .then((resp) => {
+                    return resp.data;
+                })
+                .catch((resp) => {
+                    //handle error
+                    console.log(resp);
+                });
+        }
+    },
     facility: {
         getFacilityList: () => {
             return axios.get(facilityListURL).then((resp) => {
