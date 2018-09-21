@@ -19,17 +19,17 @@ if (document.location.host === "monitor.acadiadevelopment.com") {
 
 export default {
     crawl: {
-        startCrawl: (domainToCrawl, userEmail) => {
+        startCrawl: (domainToCrawl, userEmail, crawlType) => {
             // Set form data variable
             let formData = new FormData();
             formData.set('domain', domainToCrawl);
             formData.set('email', userEmail);
+            formData.set('crawlType', crawlType);
 
-            return axios({
-                method: 'post',
-                url: crawlURL,
-                data: formData,
-                config: {headers: {'Content-Type': 'multipart/form-data'}}
+            return axios.post(crawlURL, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                },
             })
                 .then((resp) => {
                     return resp.data;

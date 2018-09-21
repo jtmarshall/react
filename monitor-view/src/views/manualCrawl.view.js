@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import api from '../components/actions/api';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
 import './manualCrawl.css';
 
 
@@ -12,7 +16,8 @@ class ManualCrawl extends Component {
 
         this.state = {
             crawlDomain: "",
-            userEmail: ""
+            userEmail: "",
+            crawlType: "404"
         };
     }
 
@@ -20,6 +25,7 @@ class ManualCrawl extends Component {
         // Get values from state
         let domain = this.state.crawlDomain;
         let email = this.state.userEmail;
+        let cType = this.state.crawlType;
 
         domain.replace('https://', '');
         domain.replace('http://', '');
@@ -33,7 +39,7 @@ class ManualCrawl extends Component {
         }
 
         // Start request for crawl
-        api.crawl.startCrawl(domain, email).then(resp => {
+        api.crawl.startCrawl(domain, email, cType).then(resp => {
             alert(resp);
         });
     };
@@ -48,7 +54,6 @@ class ManualCrawl extends Component {
         this.setState({
             crawlDomain: val
         });
-        console.log(this.state);
     };
 
     // Set state for user email
@@ -56,7 +61,13 @@ class ManualCrawl extends Component {
         this.setState({
             userEmail: val
         });
-        console.log(this.state);
+    };
+
+    // update crawl type selection
+    handleSelect = name => event => {
+        this.setState({
+            crawlType: event.target.value
+        });
     };
 
     render() {
@@ -70,6 +81,22 @@ class ManualCrawl extends Component {
                         <br/>
                         Crawl times vary by domain.
                     </p>
+                    <FormControl className="">
+                        <InputLabel htmlFor="filterCrawlType">Crawl Type</InputLabel>
+                        <Select
+                            style={{width: '120px', color: '#ff9800'}}
+                            value={this.state.crawlType}
+                            onChange={this.handleSelect('crawlType')}
+                            inputProps={{
+                                name: 'crawlType',
+                                id: 'filterCrawlType',
+                            }}
+                        >
+                            <MenuItem value={'404'}>404</MenuItem>
+                            <MenuItem value={'sitemap'}>Sitemap</MenuItem>
+                        </Select>
+                    </FormControl>
+                    <br/>
                     <TextField
                         required
                         id="standard-required"
