@@ -48,6 +48,9 @@
     flex-wrap: wrap;
 }
 
+.skuFilterSelect {
+    color: rgb(255, 152, 0) !important;
+}
 
 @keyframes App-logo-spin {
     from {
