@@ -64,7 +64,7 @@ class ManualCrawl extends Component {
     };
 
     // update crawl type selection
-    handleSelect = name => event => {
+    handleSelect = event => {
         this.setState({
             crawlType: event.target.value
         });

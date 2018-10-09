@@ -51,8 +51,18 @@ class App extends Component {
                     </header>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
 
-                    <Route path='/404' render={() => <FofView selected={this.state.SelectedFacilities}/>}/>
                     <Route exact path='/' render={() => <StatusView selected={this.state.SelectedFacilities}/>}/>
+
+                    {(window.location.hash !== "#/") ? (
+                        <div style={{padding: "30px"}}>
+                            You're off the path...
+                            <Link to="/">
+                                Go Back Home
+                            </Link>
+                        </div>
+                        ) : ("")
+                    }
+
                 </div>
             );
         }
