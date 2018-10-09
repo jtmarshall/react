@@ -50,8 +50,19 @@ class App extends Component {
                         </h1>
                     </header>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
-                    
+
                     <Route exact path='/' render={() => <StatusView selected={this.state.SelectedFacilities}/>}/>
+
+                    {(window.location.hash !== "#/") ? (
+                        <div style={{padding: "30px"}}>
+                            You're off the path...
+                            <Link to="/">
+                                Go Back Home
+                            </Link>
+                        </div>
+                        ) : ("")
+                    }
+
                 </div>
             );
         }
