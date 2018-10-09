@@ -50,8 +50,7 @@ class App extends Component {
                         </h1>
                     </header>
                     <FacilityAutoComplete onUpdate={this.selectedUpdate}/>
-
-                    <Route path='/404' render={() => <FofView selected={this.state.SelectedFacilities}/>}/>
+                    
                     <Route exact path='/' render={() => <StatusView selected={this.state.SelectedFacilities}/>}/>
                 </div>
             );

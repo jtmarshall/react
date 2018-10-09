@@ -5,6 +5,7 @@ import Tabs, {Tab} from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import FofView from "./fof.view";
 
 function TabContainer(props) {
     return (
@@ -69,9 +70,7 @@ class StatusView extends Component {
                     <Tabs value={value} onChange={this.handleChange} centered>
                         <Tab label="Weekly"/>
                         <Tab label="Monthly"/>
-                        <Link to="/404">
-                            <Tab label="404 List"/>
-                        </Link>
+                        <Tab label="404 List"/>
                         <Link to="/manual_crawl">
                             <Tab label="Start Crawl"/>
                         </Link>
@@ -112,6 +111,9 @@ class StatusView extends Component {
                         })) : (<p> Could Not Get Data </p>)
                         }
                     </TabContainer>}
+                    {value === 2 && <TabContainer>
+                        <FofView selected={selected}/>
+                    </TabContainer>}
                 </div>
             );
         } else {
@@ -121,9 +123,7 @@ class StatusView extends Component {
                     <Tabs value={value} onChange={this.handleChange} centered>
                         <Tab label="Weekly"/>
                         <Tab label="Monthly"/>
-                        <Link to="/404">
-                            <Tab label="404 List"/>
-                        </Link>
+                        <Tab label="404 List"/>
                         <Link to="/manual_crawl">
                             <Tab label="Start Crawl"/>
                         </Link>
@@ -159,6 +159,9 @@ class StatusView extends Component {
                             />);
                         })) : (<p> Could Not Get Data </p>)
                         }
+                    </TabContainer>}
+                    {value === 2 && <TabContainer>
+                        <FofView selected={selected}/>
                     </TabContainer>}
                 </div>
             );
