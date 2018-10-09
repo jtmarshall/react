@@ -64,9 +64,9 @@ class ManualCrawl extends Component {
     };
 
     // update crawl type selection
-    handleSelect = event => {
+    handleSelect = val => {
         this.setState({
-            crawlType: event.target.value
+            crawlType: val
         });
     };
 
@@ -86,7 +86,7 @@ class ManualCrawl extends Component {
                         <Select
                             style={{width: '120px', color: '#ff9800'}}
                             value={this.state.crawlType}
-                            onChange={this.handleSelect('crawlType')}
+                            onChange={(e) => this.handleSelect(e.target.value)}
                             inputProps={{
                                 name: 'crawlType',
                                 id: 'filterCrawlType',
