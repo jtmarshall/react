@@ -60,7 +60,7 @@ class App extends Component {
                                 Go Back Home
                             </Link>
                         </div>
-                        ) : ("")
+                        ) : (<span></span>)
                     }
 
                 </div>

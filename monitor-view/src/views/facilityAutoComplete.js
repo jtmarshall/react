@@ -56,8 +56,9 @@ function retrieveList() {
         for (let key in resp) {
             suggestions.push(
                 {
-                    label: resp[key],
-                    url: key
+                    label: resp[key].FacilityName,
+                    url: key,
+                    type: resp[key].FacilityType
                 }
             )
         }
