@@ -8,11 +8,6 @@ body {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 60px;
-}
-
 .App-header {
   background-color: #222;
   height: 70px;
@@ -26,44 +21,6 @@ body {
 
 .App-intro {
   font-size: large;
-}
-
-.autoComplete {
-  flex-grow: 1;
-  height: 250px;
-}
-
-.autoComplete-container {
-  flex-grow: 1;
-  position: relative;
-  width: 80%;
-  margin-left: 10%;
-  box-shadow: none;
-}
-
-.autoComplete-paper {
-  position: fixed;
-  z-index: 1;
-  margin-top: 2px;
-}
-.autoComplete-chip {
-  margin: 2px 4px;
-}
-
-.autoComplete-inputRoot {
-  padding-top: 10px;
-  flex-wrap: wrap;
-  height: 42px !important;
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .chart-container {
@@ -139,13 +96,4 @@ body {
 
 h1 a {
   color: #FFFFFF !important;
-}
-
-
-@media only screen and (max-device-width: 667px) {
-  .domainCard {
-    width: 80vw !important;
-    margin: 2px !important;
-    border: 2px solid #00C853;
-  }
 }

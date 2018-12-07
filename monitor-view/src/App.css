@@ -3,7 +3,6 @@
 }
 
 .App-logo {
-    animation: App-logo-spin infinite 20s linear;
     height: 60px;
 }
 
@@ -22,44 +21,35 @@
     font-size: large;
 }
 
-.autoComplete {
-    flex-grow: 1;
-    height: 250px;
-}
+/*.autoComplete {*/
+    /*flex-grow: 1;*/
+    /*height: 250px;*/
+/*}*/
 
-.autoComplete-container {
-    flex-grow: 1;
-    position: relative;
-    width: 80%;
-    margin-left: 10%;
-}
+/*.autoComplete-container {*/
+    /*flex-grow: 1;*/
+    /*position: relative;*/
+    /*width: 80%;*/
+    /*margin-left: 10%;*/
+/*}*/
 
-.autoComplete-paper {
-    position: fixed;
-    z-index: 1;
-    margin-top: 2px;
-}
-.autoComplete-chip {
-    margin: 2px 4px;
-}
+/*.autoComplete-paper {*/
+    /*position: fixed;*/
+    /*z-index: 1;*/
+    /*margin-top: 2px;*/
+/*}*/
+/*.autoComplete-chip {*/
+    /*margin: 2px 4px;*/
+/*}*/
 
-.autoComplete-inputRoot {
-    padding-top: 10px;
-    flex-wrap: wrap;
-}
+/*.autoComplete-inputRoot {*/
+    /*padding-top: 10px;*/
+    /*flex-wrap: wrap;*/
+/*}*/
 
-.skuFilterSelect {
-    color: rgb(255, 152, 0) !important;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
+/*.skuFilterSelect {*/
+    /*color: rgb(255, 152, 0) !important;*/
+/*}*/
 
 .chart-container {
     position: relative;
@@ -79,13 +69,13 @@
     font-size: 1.1em !important;
 }
 
-.nav-drawer {
-    width: 250px;
-}
+/*.nav-drawer {*/
+    /*width: 250px;*/
+/*}*/
 
-.nav-drawer > *[class^='MuiPaper-']{
-    min-width: 240px;
-}
+/*.nav-drawer > *[class^='MuiPaper-']{*/
+    /*min-width: 240px;*/
+/*}*/
 
 .drawerPaper {
     width: 250px;
@@ -113,10 +103,10 @@ h1 a {
 }
 
 
-@media only screen and (max-device-width: 667px) {
-    .domainCard {
-        width: 80vw !important;
-        margin: 2px !important;
-        border: 2px solid #00C853;
-    }
-}
+/*@media only screen and (max-device-width: 667px) {*/
+    /*.domainCard {*/
+        /*width: 80vw !important;*/
+        /*margin: 2px !important;*/
+        /*border: 2px solid #00C853;*/
+    /*}*/
+/*}*/

@@ -1,6 +1,4 @@
 import React from 'react';
-import './nav.css';
-import logo from '../logo.svg';
 import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import { Link } from 'react-router-dom';
