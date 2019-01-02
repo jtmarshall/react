@@ -1,12 +1,12 @@
 import axios from "axios";  // request library
 
 // url for monitor status info endpoint
-let statusURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/monitorstatus";
+let statusURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/api/monitorstatus";
 //let statusURL = "http://localhost:5555/api/monitorstatus";
-let monthlyStatusURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/monthlymonitorstatus";
-let fofURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/404list";
-let facilityListURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/getFacilities";
-let crawlURL = "http://go-monitor.us-east-1.elasticbeanstalk.com/api/runCrawl";
+let monthlyStatusURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/api/monthlymonitorstatus";
+let fofURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/api/404list";
+let facilityListURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/api/getFacilities";
+let crawlURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/api/runCrawl";
 
 // Check if we need to convert to relative url because basic auth
 if (document.location.host === "monitor.acadiadevelopment.com") {
