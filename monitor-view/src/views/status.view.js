@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import DomainCard from '../components/domain-card';
 import api from '../components/actions/api';
-import Tabs, {Tab} from 'material-ui/Tabs';
-import Typography from 'material-ui/Typography';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import FofView from "./fof.view";

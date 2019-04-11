@@ -176,7 +176,7 @@ class DateComponent extends React.Component {
 
     render() {
         return (
-            <form className="col-lg-3 datePicker">
+            <form className="datePicker">
 
                 <Tooltip title="Select Dates" placement="bottom">
                     <Button onClick={this.handleClickOpen} style={{top: '5px'}}>

@@ -17,13 +17,12 @@ export class LineChart extends Component {
         let numbDays = endDay.diff(startDay, 'days');
 
         let primaryLabels = [];
+        let temp = moment(toDate);
 
         // Generate date labels starting with 'toDate' and iterating back through length of data
         for (let i = -1; i < numbDays; i++) {
             // parse date for how many days prior
-            let temp = new Date();
-            temp.setDate(toDate.getDate() - i);
-            primaryLabels.unshift((toDate.getUTCMonth() + 1) + "/" + temp.getDate());
+            primaryLabels.unshift(moment(temp).subtract(i, 'd').format('M/D'));
         }
 
         this.state = {
@@ -201,7 +200,9 @@ export class LineChart extends Component {
                 }
             },
         };
+    }
 
+    componentDidMount() {
         this.calculateDateRange();
     }
 

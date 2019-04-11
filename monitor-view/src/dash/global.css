@@ -29,3 +29,13 @@ body {
 .raised-btn:active::before {
   opacity: 0.32;
 }
+
+/* Facility Style colors */
+:root {
+  --primary-color: green;
+  --secondary-color: white;
+}
+
+.header-logo {
+  color: var(--secondary-color);
+}

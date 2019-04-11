@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
-import Table from '../../tools/table.js';
 import Card from '../../tools/Card/Card';
 import CardHeader from "../../tools/Card/CardHeader";
 import CardBody from '../../tools/Card/CardBody';
 import withStyles from "@material-ui/core/styles/withStyles";
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import LineChart from './lineChart';
@@ -71,15 +68,8 @@ class Timeframe extends Component {
         tabValue: this.props.parentState.Timeframe.tabValue,
     };
 
-    handleTabChange = (event, tabValue) => {
-        this.setState({tabValue});
-
-        this.props.updateDash('tabValue', tabValue);
-    };
-
     render() {
         const {classes} = this.props;
-        const {tabValue} = this.state;
 
         return (
             <div className="conversionComponent">

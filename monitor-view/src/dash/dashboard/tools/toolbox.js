@@ -1,5 +1,4 @@
 // Collection of global Dash funcs
-
 import moment from "moment";
 
 export default {
@@ -71,6 +70,5 @@ export default {
         } else {
             return JSON.parse(window.localStorage.getItem('yakPak'));
         }
-
     }
 }

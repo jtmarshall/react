@@ -12,6 +12,8 @@ import Explorer from "./components/Explorer/Explorer";
 import DateComponent from './tools/DateComponent';
 import Touch from "./components/Touch/Touch";
 import Timeframe from "./components/Timeframe/Timeframe";
+import Geo from "./components/Geo/Geo";
+import PrintComponent from './components/Facility/PrintComponent';
 
 
 // Global state for local storage
@@ -30,6 +32,7 @@ class Dash extends React.Component {
         if (yakPak == null) {
             this.state = {
                 SelectedFacility: [],
+                SelectedFacilityDomain: '',
                 DateFrame: {
                     From: moment().add(-7, 'days').format('YYYY-MM-DD'),
                     To: moment().format('YYYY-MM-DD'),
@@ -113,13 +116,17 @@ class Dash extends React.Component {
     // Update global state for onbeforeunload func
     componentDidUpdate() {
         savedState = this.state;
-        toolbox.storePak(savedState);
     }
 
     // Update SelectedFacility state; pass back from facility auto complete component
-    updateSelectedFacility = (val) => {
+    updateSelectedFacility = (name, domain) => {
         this.setState({
-            SelectedFacility: val
+            SelectedFacility: name,
+            SelectedFacilityDomain: domain,
+        }, () => {
+            if (this.state.SelectedFacility.length > 0) {
+                this.refreshView();
+            }
         });
     };
 
@@ -128,7 +135,6 @@ class Dash extends React.Component {
         this.setState({
             Filter: val
         });
-
         console.log(this.state);
     };
 
@@ -197,13 +203,20 @@ class Dash extends React.Component {
                     <Sidebar selected={this.state.Filter} onUpdate={this.updateSKUFilter}
                              rightDrawer={this.state.rightDrawer}/>
 
-                    <Route path="/touch" render={() => <Touch parentState={this.state} updateDash={this.updateDashStoryboard}/>}/>
-                    <Route exact path="/conversion" render={() => <Conversion parentState={this.state} updateDash={this.updateDashConversion}/>}/>
-                    <Route path="/conversion/path" render={() => <ConversionPath parentState={this.state} updateDash={this.updateDashConversion}/>}/>
-                    <Route path="/explorer/" render={() => <Explorer parentState={this.state} updateDash={this.updateDashExplorer}/>}/>
-                    <Route path="/export" render={() => <Export selected={this.state.SelectedFacility}/>}/>
-                    <Route path="/settings" render={() => <Settings/>}/>
-                    <Route path="/timeframe" render={() => <Timeframe parentState={this.state} updateDash={this.updateDashTimeframe}/>}/>
+                    <div className="componentArea">
+                        <Route path="/touch" render={() => <Touch parentState={this.state} updateDash={this.updateDashStoryboard}/>}/>
+                        <Route exact path="/conversion" render={() => <Conversion parentState={this.state} updateDash={this.updateDashConversion}/>}/>
+                        <Route path="/conversion/path" render={() => <ConversionPath parentState={this.state} updateDash={this.updateDashConversion}/>}/>
+                        <Route path="/explorer/" render={() => <Explorer parentState={this.state} updateDash={this.updateDashExplorer}/>}/>
+                        <Route path="/export" render={() => <Export selected={this.state.SelectedFacility}/>}/>
+                        <Route path="/timeframe" render={() => <Timeframe parentState={this.state} updateDash={this.updateDashTimeframe}/>}/>
+                        <Route path="/geo" render={() => <Geo parentState={this.state}/>}/>
+                        <Route path="/settings" render={() => <Settings/>}/>
+                        <Route path="/facility" render={() => <PrintComponent parentState={this.state}/>}/>
+                    </div>
+
+                    {/*<Route path="/facility" render={() => <Facility parentState={this.state}/>}/>*/}
+
                 </div>
             );
         } else {

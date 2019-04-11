@@ -4,6 +4,19 @@
 .dash {
     padding-left: 180px;
 }
+
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
 /* React CLI Boiler Plate */
 .App {
     text-align: center;
@@ -30,6 +43,15 @@
     font-size: large;
 }
 
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* My styles added to supplement bootstrap/boilerplate */
 .filterComponent {
     display: inline-flex;
@@ -39,7 +61,7 @@
 
 .autoComplete-container {
     display: inline-flex;
-    width: 60% !important;
+    width: 60%;
     padding: 5px 10px;
 }
 
@@ -55,7 +77,6 @@
 
 .autoComplete-inputRoot {
     padding-top: 10px;
-    flex-wrap: wrap;
 }
 
 .card {
@@ -127,7 +148,7 @@
     top: 0;
     background: #222;
     padding: 10px;
-    width: 200px;
+    width: 180px;
     height: 100%;
 }
 
@@ -469,10 +490,6 @@ fieldset[disabled] .navbar .navbar-nav > li > a.btn.btn-prime.active {
 
 }
 
-/*.skuFilter {*/
-/*display: grid;*/
-/*}*/
-
 .skuFilter > * {
     min-width: 90% !important;
     padding: 4px !important;
@@ -482,25 +499,20 @@ fieldset[disabled] .navbar .navbar-nav > li > a.btn.btn-prime.active {
     color: rgb(255, 152, 0) !important;
 }
 
-/* .CardHeader {
-  padding: 15px;
-  margin-top: -20px;
-  border-radius: 3px;
+.ulFacility {
+    list-style-type: none;
+    text-align: center;
+    padding-left: 0;
+    width: 100%;
+    display: inline-flex;
 }
-.cardCategoryWhite a a:hover a:focus {
-    color: rgba(255,255,255,.62);
-    margin: 0;
-    font-size: 14px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 
-.cardTitleWhite {
-  color: "#FFFFFF";
-  margin-top: "0px";
-  min-height: "auto";
-  font-weight: "300";
-  font-family: "'Roboto', 'Helvetica', 'Arial', sans-serif";
-  margin-bottom: "3px";
-  text-decoration: "none";
-} */
+.ulFacility li {
+    margin: auto;
+    width: 30%;
+    vertical-align: bottom;
+}
+
+.ulFacility .material-icons {
+    vertical-align: bottom;
+}

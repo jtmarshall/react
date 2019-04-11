@@ -72,8 +72,6 @@ class Conversion extends Component {
         };
     }
 
-
-
     handleTabChange = (event, tabValue) => {
         this.setState({tabValue});
 

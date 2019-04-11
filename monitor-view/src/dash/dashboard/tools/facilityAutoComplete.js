@@ -75,6 +75,7 @@ function renderSuggestion({ suggestion, index, itemProps, highlightedIndex, sele
         <MenuItem
             {...itemProps}
             key={suggestion.label}
+            url={suggestion.url}
             selected={isHighlighted}
             component="div"
             style={{
@@ -142,12 +143,17 @@ class FacilityAutoComplete extends React.Component {
         }
     };
 
+    // Handle user's character input
     handleInputChange = event => {
         this.setState({ inputValue: event.target.value });
     };
 
+    // Updates state with selected facility name
     handleChange = item => {
         let { selectedItem } = this.state;
+
+        // Get the object in the suggestions list matching the facility label(name) selected
+        let obj = suggestions.find(o => o.label === item);
 
         if (selectedItem.indexOf(item) === -1) {
             selectedItem = [...selectedItem, item];
@@ -159,7 +165,7 @@ class FacilityAutoComplete extends React.Component {
         });
 
         // Pass updated selected facilities back to parent component
-        this.props.onUpdate(selectedItem);
+        this.props.onUpdate(selectedItem, obj.url);
         //localStorage.setItem("selectedFacilities", selectedItem);
     };
 
@@ -212,7 +218,7 @@ class FacilityAutoComplete extends React.Component {
                                     renderSuggestion({
                                         suggestion,
                                         index,
-                                        itemProps: getItemProps({ item: suggestion.label }),
+                                        itemProps: getItemProps({ item: suggestion.label, url: suggestion.url }),
                                         highlightedIndex,
                                         selectedItem: selectedItem2,
                                     }),

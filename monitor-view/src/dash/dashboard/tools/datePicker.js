@@ -165,7 +165,7 @@ class DatePicker extends React.Component {
 
     render() {
         return (
-            <form className="col-lg-4 datePicker">
+            <form className="datePicker">
                 <Tooltip title="Primary Start Date" placement="bottom">
                     <TextField
                         required={true}

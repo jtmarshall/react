@@ -7,6 +7,7 @@ let fofURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/ap
 let facilityListURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/api/getFacilities";
 let authURL = "";
 let updateURL = "/updatePak";
+let csvEndpoint = document.location.origin + "/api/csv";
 
 // Check if we need to convert to relative url because basic auth
 if (document.location.host === "monitor.acadiadevelopment.com") {
@@ -17,6 +18,28 @@ if (document.location.host === "monitor.acadiadevelopment.com") {
 
 
 export default {
+    downloadFile: {
+        uploadRequest: (data) => {
+            console.log("API Request to: ", csvEndpoint);
+            return axios.post(csvEndpoint, data, {headers: {'Content-Type': 'multipart/form-data'}})
+                .then((response) => {
+                    console.log("Headers: ", response.headers);
+                    // get filename from resp
+                    const filename = response.headers['content-disposition'].split('filename=')[1];
+
+                    const url = window.URL.createObjectURL(new Blob([response.data]));
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.setAttribute('download', filename);
+                    document.body.appendChild(link);
+                    link.click();
+                    return response.data;
+                })
+                .catch((err) => {
+                    console.log("Upload ERR: ", err);
+                })
+        }
+    },
     facility: {
         getFacilityList: () => {
             return axios.get(facilityListURL).then((resp) => {
@@ -40,7 +63,7 @@ export default {
     },
     security: {
         authenticateLogin: (user, pass) => {
-            // Set user creds in from data
+            // Set user creds in form data
             let formData = new FormData();
             formData.set('user', user);
             formData.set('pass', pass);

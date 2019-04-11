@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
     }
 
     toggleHidden = name => event => {
-        console.log(name, !this.state[name]);
+        // console.log(name, !this.state[name]);
         this.setState({
             [name]: !this.state[name]
         });
@@ -25,7 +25,7 @@ class Sidebar extends React.Component {
 
     render() {
         return (
-            <div className="sidebarComponent" style={{width: '200px !important'}}>
+            <div className="sidebarComponent">
                 <img src={logo} className="App-logo" alt="logo"/>
                 <h1 className="App-title">YAK</h1>
 
@@ -40,9 +40,16 @@ class Sidebar extends React.Component {
                         </Tooltip>
                     </Link>
                     <Link to="/export">
-                        <Tooltip title="Reports & Exports" placement="bottom">
+                        <Tooltip title="Export a File" placement="bottom">
                             <li style={{paddingLeft: 25}}>
-                                <MaterialIcon icon='timeline' color='#EEEEEE'/> Report/Export
+                                <MaterialIcon icon='cloud_download' color='#EEEEEE'/> Export
+                            </li>
+                        </Tooltip>
+                    </Link>
+                    <Link to="/facility">
+                        <Tooltip title="Facility Reports" placement="bottom">
+                            <li style={{paddingLeft: 25}}>
+                                <MaterialIcon icon='view_quilt' color='#EEEEEE'/> Facility
                             </li>
                         </Tooltip>
                     </Link>

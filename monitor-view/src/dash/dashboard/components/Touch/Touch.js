@@ -7,6 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
+import TouchChart from './touchChart';
 
 
 const styles = {
@@ -91,18 +92,18 @@ class Touch extends Component {
                     onChange={this.handleTabChange}
                     style={{display: 'inline-block'}}
                 >
-                    <Tab label="Medium"/>
-                    <Tab label="Source"/>
-                    <Tab label="Disorder"/>
+                    <Tab label="First"/>
+                    <Tab label="Mid"/>
+                    <Tab label="Last"/>
                 </Tabs>
 
                 {tabValue === 0 && <TabContainer>
                     <Card>
-                        <CardHeader color="danger">
-                            <h4 className="cardTitleWhite">Medium</h4>
+                        <CardHeader color="primary">
+                            <h4 className="cardTitleWhite">First Touch v Conversion</h4>
                         </CardHeader>
                         <CardBody className={classes.cardConversionTable}>
-
+                            <TouchChart/>
                         </CardBody>
                     </Card>
                 </TabContainer>}
@@ -110,7 +111,7 @@ class Touch extends Component {
                 {tabValue === 1 && <TabContainer>
                     <Card>
                         <CardHeader color="info">
-                            <h4 className="cardTitleWhite">Source</h4>
+                            <h4 className="cardTitleWhite">Mid Touch</h4>
                         </CardHeader>
                         <CardBody className={classes.cardConversionTable}>
 
@@ -121,7 +122,7 @@ class Touch extends Component {
                 {tabValue === 2 && <TabContainer>
                     <Card>
                         <CardHeader color="prime">
-                            <h4 className="cardTitleWhite">Disorder</h4>
+                            <h4 className="cardTitleWhite">Last Touch</h4>
                         </CardHeader>
                         <CardBody className={classes.cardConversionTable}>
 
