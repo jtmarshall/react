@@ -1,0 +1,10 @@
+.textField {
+    width: 340px;
+}
+
+.loginBlock {
+    display: block;
+    margin-left: -180px !important;
+    background-color: #222;
+    height: 100vh;
+}

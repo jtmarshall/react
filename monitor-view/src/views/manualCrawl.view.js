@@ -15,9 +15,10 @@ class ManualCrawl extends Component {
         super(props);
 
         this.state = {
-            crawlDomain: "",
-            userEmail: "",
-            crawlType: "404"
+            crawlDomain: '',
+            userEmail: '',
+            crawlType: '404',
+            searchTerm: '',
         };
     }
 
@@ -26,6 +27,7 @@ class ManualCrawl extends Component {
         let domain = this.state.crawlDomain;
         let email = this.state.userEmail;
         let cType = this.state.crawlType;
+        let searchTerm = this.state.searchTerm;
 
         domain.replace('https://', '');
         domain.replace('http://', '');
@@ -39,7 +41,7 @@ class ManualCrawl extends Component {
         }
 
         // Start request for crawl
-        api.crawl.startCrawl(domain, email, cType).then(resp => {
+        api.crawl.startCrawl(domain, email, cType, searchTerm).then(resp => {
             alert(resp);
         });
     };
@@ -63,6 +65,13 @@ class ManualCrawl extends Component {
         });
     };
 
+    // Set state for user email
+    updateSearchTerm = (val) => {
+        this.setState({
+            searchTerm: val
+        });
+    };
+
     // update crawl type selection
     handleSelect = val => {
         this.setState({
@@ -77,7 +86,7 @@ class ManualCrawl extends Component {
 
                 <form className="" noValidate autoComplete="off">
                     <p>
-                        Trigger a crawl and receive errors to your email.
+                        Trigger a crawl and receive report in your email.
                         <br/>
                         Crawl times vary by domain.
                     </p>
@@ -94,9 +103,25 @@ class ManualCrawl extends Component {
                         >
                             <MenuItem value={'404'}>404</MenuItem>
                             <MenuItem value={'sitemap'}>Sitemap</MenuItem>
+                            <MenuItem value={'search'}>Search</MenuItem>
                         </Select>
                     </FormControl>
                     <br/>
+                    {this.state.crawlType === "search" &&
+                    <span>
+                        <TextField
+                            required
+                            id="standard-required"
+                            label="Search Term"
+                            defaultValue={this.state.searchTerm}
+                            onChange={(e) => this.updateSearchTerm(e.target.value)}
+                            className="textField"
+                            margin="normal"
+                        />
+                        <br/>
+                    </span>
+
+                    }
                     <TextField
                         required
                         id="standard-required"

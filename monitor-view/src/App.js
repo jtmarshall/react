@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import {Route, Link} from 'react-router-dom';
 import StatusView from './views/status.view';
-import FofView from './views/fof.view';
 import ManualCrawl from './views/manualCrawl.view';
-// import Nav from './nav/nav-drawer';
 import FacilityAutoComplete from './views/facilityAutoComplete';
+import DashApp from './dash/App';
+import './assets/css/material-dashboard.css';
+import './assets/css/material-dashboard.css';
+import './index.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends Component {
@@ -26,10 +29,10 @@ class App extends Component {
 
     render() {
         // remove unnecessary search bar from manual crawl page
-        if (window.location.hash == "#/manual_crawl") {
+        if (window.location.hash === "#/manual_crawl") {
             return (
                 <div className="App">
-                    <header className="App-header">
+                    <header className="App-header" style={{height: '70px !important'}}>
                         <h1 className="App-title">
                             <Link to="/">
                                 Acadia Monitoring
@@ -39,10 +42,10 @@ class App extends Component {
                     <Route path='/manual_crawl' render={() => <ManualCrawl/>}/>
                 </div>
             );
-        } else {
+        } else if (window.location.hash === "#/") {
             return (
                 <div className="App">
-                    <header className="App-header">
+                    <header className="App-header" style={{height: '70px !important'}}>
                         <h1 className="App-title">
                             <Link to="/">
                                 Acadia Monitoring
@@ -60,9 +63,15 @@ class App extends Component {
                                 Go Back Home
                             </Link>
                         </div>
-                        ) : (<span></span>)
+                    ) : (<span></span>)
                     }
 
+                </div>
+            );
+        } else {
+            return (
+                <div className="App">
+                    <DashApp/>
                 </div>
             );
         }

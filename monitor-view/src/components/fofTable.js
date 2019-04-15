@@ -8,7 +8,7 @@ function FofTable(props) {
             <h4>
                 {props.facility}
             </h4>
-            <table className="fofTable">
+            <table className="fofTable" style={{borderCollapse: 'collapse'}}>
                 <thead>
                 <tr>
                     <th component="th"></th>

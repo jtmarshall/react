@@ -1,0 +1,54 @@
+path {
+    pointer-events: all;
+}
+
+path:hover {
+    opacity: 0.50;
+    cursor: pointer;
+}
+
+.color-box {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    left: 5px;
+    top: 5px;
+    margin-right: 5px;
+}
+
+.geoLegend {
+    list-style: none;
+    display: inline-flex;
+    float: right;
+}
+
+.geoLegend li {
+    margin: 6px;
+}
+
+.geoTooltip:hover {
+    display: block;
+}
+
+.geoTooltip {
+    /*display: none;*/
+    margin-left: 28px;
+    padding: 10px;
+    /*position: absolute;*/
+    z-index: 1000;
+    width:200px;
+    height:100px;
+}
+
+.tooltip {
+    text-decoration:none;
+    position:relative;
+}
+.tooltip span {
+    display:none;
+}
+.tooltip:hover span {
+    display:block;
+    position:fixed;
+    overflow:hidden;
+}
