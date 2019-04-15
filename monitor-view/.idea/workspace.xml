@@ -3,32 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae064c4d-a7e2-443c-a40e-20e638daed89" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/actions/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/actions/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/fofTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/fofTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/Dash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/Dash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/Conversion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/Conversion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/lineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/lineChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Timeframe/Timeframe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/components/Timeframe/Timeframe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Timeframe/lineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/components/Timeframe/lineChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Touch/Touch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/components/Touch/Touch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/DateComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/tools/DateComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/datePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/tools/datePicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/facilityAutoComplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/tools/facilityAutoComplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/toolbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/tools/toolbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/facilityAutoComplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/facilityAutoComplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/manualCrawl.view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/manualCrawl.view.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/status.view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/status.view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Facility/PrintComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dash/dashboard/components/Facility/PrintComponent.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,30 +17,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dash/dashboard/components/Facility/facility.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/actions/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-30">
+            <state relative-caret-position="135">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/manualCrawl.view.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="88" column="61" selection-start-line="88" selection-start-column="61" selection-end-line="88" selection-end-column="61" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dash/dashboard/components/Facility/PrintComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -223,6 +201,7 @@
         <option value="$PROJECT_DIR$/src/dash/dashboard/api/api.js" />
         <option value="$PROJECT_DIR$/src/views/manualCrawl.view.js" />
         <option value="$PROJECT_DIR$/src/components/actions/api.js" />
+        <option value="$PROJECT_DIR$/src/dash/dashboard/components/Facility/PrintComponent.js" />
       </list>
     </option>
   </component>
@@ -233,9 +212,10 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1512" />
-    <option name="height" value="974" />
+    <option name="x" value="1" />
+    <option name="y" value="-1057" />
+    <option name="width" value="1404" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -269,6 +249,36 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="monitor-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="monitor-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dash" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="monitor-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="monitor-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dash" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="monitor-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="monitor-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dash" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="monitor-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="monitor-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dash" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Facility" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="monitor-view" type="b2602c69:ProjectViewProjectNode" />
@@ -394,17 +404,18 @@
       <workItem from="1546445240833" duration="1906000" />
       <workItem from="1553010035595" duration="5185000" />
       <workItem from="1554479054867" duration="3321000" />
+      <workItem from="1555083438307" duration="189000" />
+      <workItem from="1555345279347" duration="77000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157108000" />
+    <option name="totallyTimeSpent" value="157374000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1512" height="974" extended-state="0" />
-    <editor active="true" />
+    <frame x="1" y="-1057" width="1404" height="1057" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994797" visible="true" weight="0.20965609" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4994797" visible="true" weight="0.22578348" />
       <window_info id="Structure" order="1" sideWeight="0.5005203" side_tool="true" weight="0.17724138" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -610,16 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dash/dashboard/components/Facility/PrintComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dash/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="861">
@@ -688,6 +689,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dash/dashboard/api/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="971">
+          <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dash/dashboard/components/Facility/facility.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/actions/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -746,33 +768,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dash/dashboard/api/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="971">
-          <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dash/dashboard/components/Facility/facility.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/actions/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/manualCrawl.view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="88" column="61" selection-start-line="88" selection-start-column="61" selection-end-line="88" selection-end-column="61" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dash/dashboard/components/Facility/PrintComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

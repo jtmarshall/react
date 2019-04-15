@@ -14,7 +14,7 @@ class PrintComponent extends React.Component {
     render() {
         return (
             <div className='facilityPrint'>
-                <ReactToPrint
+                <ReactToPrint.default
                     pageStyle={{
                         width: '100%',
                         paddingLeft: '0px',
