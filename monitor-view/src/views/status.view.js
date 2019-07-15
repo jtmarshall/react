@@ -77,9 +77,9 @@ class StatusView extends Component {
                         </Link>
                     </Tabs>
                     {value === 0 && <TabContainer>
-                        {domainObj ? (Object.keys(domainObj).map((keyName, keyIndex) => {
-                            // check if facility name is in the selected list before it gets rendered
-                            if (selected.includes(domainObj[keyName].FacilityName)) {
+                        {domainObj ? (Object.keys(domainObj).filter(domain => selected.includes(domainObj[domain][0].FacilityName.String))
+                        // Filter if facility name is in the selected list before it gets rendered
+                            .map((keyName, keyIndex) => {
                                 // Use keyName to get current key's name, domainObj[keyName] to get value
                                 return (<DomainCard
                                     isSelected={true}
@@ -90,14 +90,13 @@ class StatusView extends Component {
                                     id={keyName}
                                     domain={keyName}
                                 />);
-                            }
-                        })) : (<p> Could Not Get Data </p>)
+                            })) : <p>Could Not Get Data</p>
                         }
                     </TabContainer>}
                     {value === 1 && <TabContainer>
-                        {monthlyDomainObj ? (Object.keys(monthlyDomainObj).map((keyName, keyIndex) => {
-                            // check if facility name is in the selected list before it gets rendered
-                            if (selected.includes(monthlyDomainObj[keyName].FacilityName)) {
+                        {monthlyDomainObj ? (Object.keys(monthlyDomainObj).filter(domain => selected.includes(monthlyDomainObj[domain][0].FacilityName.String))
+                        // Filter if facility name is in the selected list before it gets rendered
+                            .map((keyName, keyIndex) => {
                                 // Use keyName to get current key's name, domainObj[keyName] to get value
                                 return (<DomainCard
                                     isSelected={true}
@@ -108,8 +107,7 @@ class StatusView extends Component {
                                     id={keyName}
                                     domain={keyName}
                                 />);
-                            }
-                        })) : (<p> Could Not Get Data </p>)
+                            })) : <p> Could Not Get Data </p>
                         }
                     </TabContainer>}
                     {value === 2 && <TabContainer>
@@ -142,7 +140,7 @@ class StatusView extends Component {
                                 id={keyName}
                                 domain={keyName}
                             />);
-                        })) : (<p> Could Not Get Data </p>)
+                        })) : <p> Could Not Get Data </p>
                         }
                     </TabContainer>}
                     {value === 1 && <TabContainer>
