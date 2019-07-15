@@ -28,22 +28,23 @@ class FofView extends Component {
     render() {
         let selected = this.props.selected;
         let fof = this.state.fofList;
+        console.log('Selected: ', selected);
+        console.log(fof);
 
         if (this.props.selected.length > 0) {
             return (
                 <div className="content">
                     <h3>404's</h3>
-                    {fof ? (Object.keys(fof).map((keyName, keyIndex) => {
-                        if (selected.includes(fof[keyName][0].FacilityName.String)) {
-                            // Use keyName to get current key's name, domainObj[keyName] to get value
-                            return (<FofTable
-                                facility={fof[keyName][0].FacilityName.String}
-                                domain={keyName}
-                                key={keyIndex}
-                                data={fof[keyName]}
-                            />);
-                        }
-                    })) : (<p> Could Not Get Data </p>)
+                    {fof ? (Object.keys(fof).filter(domain => selected.includes(fof[domain][0].FacilityName.String))
+                        .map((keyName, keyIndex) => {
+                        // Use keyName to get current key's name, domainObj[keyName] to get value
+                        return (<FofTable
+                            facility={fof[keyName][0].FacilityName.String}
+                            domain={keyName}
+                            key={keyIndex}
+                            data={fof[keyName]}
+                        />);
+                    })) : <p>Could Not Get Data</p>
                     }
                 </div>
             );
