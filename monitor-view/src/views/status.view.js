@@ -21,17 +21,15 @@ TabContainer.propTypes = {
 };
 
 class StatusView extends Component {
+    state = {
+        domainObj: {},
+        monthlyDomainObj: {},
+        showMonthly: false,
+        lastUpdate: " ",
+        value: 0
+    };
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            domainObj: {},
-            monthlyDomainObj: {},
-            showMonthly: false,
-            lastUpdate: " ",
-            value: 0
-        };
+    componentWillMount() {
         // get status data obj on startup
         this.retrieve();
     }
@@ -63,6 +61,7 @@ class StatusView extends Component {
     render() {
         const selected = this.props.selected;
         const {value, domainObj, monthlyDomainObj} = this.state;
+        console.log(domainObj);
 
         if (selected.length > 0) {
             return (
@@ -77,9 +76,9 @@ class StatusView extends Component {
                         </Link>
                     </Tabs>
                     {value === 0 && <TabContainer>
-                        {domainObj ? (Object.keys(domainObj).filter(domain => selected.includes(domainObj[domain][0].FacilityName.String))
-                        // Filter if facility name is in the selected list before it gets rendered
-                            .map((keyName, keyIndex) => {
+                        {domainObj ? (Object.keys(domainObj).map((keyName, keyIndex) => {
+                            // check if facility name is in the selected list before it gets rendered
+                            if (selected.includes(domainObj[keyName].FacilityName)) {
                                 // Use keyName to get current key's name, domainObj[keyName] to get value
                                 return (<DomainCard
                                     isSelected={true}
@@ -90,13 +89,14 @@ class StatusView extends Component {
                                     id={keyName}
                                     domain={keyName}
                                 />);
-                            })) : <p>Could Not Get Data</p>
+                            }
+                        })) : (<p> Could Not Get Data </p>)
                         }
                     </TabContainer>}
                     {value === 1 && <TabContainer>
-                        {monthlyDomainObj ? (Object.keys(monthlyDomainObj).filter(domain => selected.includes(monthlyDomainObj[domain][0].FacilityName.String))
-                        // Filter if facility name is in the selected list before it gets rendered
-                            .map((keyName, keyIndex) => {
+                        {monthlyDomainObj ? (Object.keys(monthlyDomainObj).map((keyName, keyIndex) => {
+                            // check if facility name is in the selected list before it gets rendered
+                            if (selected.includes(monthlyDomainObj[keyName].FacilityName)) {
                                 // Use keyName to get current key's name, domainObj[keyName] to get value
                                 return (<DomainCard
                                     isSelected={true}
@@ -107,7 +107,8 @@ class StatusView extends Component {
                                     id={keyName}
                                     domain={keyName}
                                 />);
-                            })) : <p> Could Not Get Data </p>
+                            }
+                        })) : (<p> Could Not Get Data </p>)
                         }
                     </TabContainer>}
                     {value === 2 && <TabContainer>
@@ -140,7 +141,7 @@ class StatusView extends Component {
                                 id={keyName}
                                 domain={keyName}
                             />);
-                        })) : <p> Could Not Get Data </p>
+                        })) : <p>Could Not Get Data</p>
                         }
                     </TabContainer>}
                     {value === 1 && <TabContainer>
@@ -156,7 +157,7 @@ class StatusView extends Component {
                                 id={keyName}
                                 domain={keyName}
                             />);
-                        })) : (<p> Could Not Get Data </p>)
+                        })) : <p>Could Not Get Data</p>
                         }
                     </TabContainer>}
                     {value === 2 && <TabContainer>

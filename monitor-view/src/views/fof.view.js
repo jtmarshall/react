@@ -4,14 +4,11 @@ import api from '../components/actions/api';
 
 
 class FofView extends Component {
+    state = {
+        fofList: {},
+    };
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            fofList: {},
-        };
-
+    componentWillMount() {
         // Initiate request on startup
         this.retrieve();
     }
@@ -35,16 +32,16 @@ class FofView extends Component {
             return (
                 <div className="content">
                     <h3>404's</h3>
-                    {fof ? (Object.keys(fof).filter(domain => selected.includes(fof[domain][0].FacilityName.String))
-                        .map((keyName, keyIndex) => {
+                    {(Object.keys(fof).filter(domain => selected.includes(fof[domain][0].FacilityName.String))
+                        .map((keyName, keyIndex) => (
                         // Use keyName to get current key's name, domainObj[keyName] to get value
-                        return (<FofTable
+                        <FofTable
                             facility={fof[keyName][0].FacilityName.String}
                             domain={keyName}
                             key={keyIndex}
                             data={fof[keyName]}
-                        />);
-                    })) : <p>Could Not Get Data</p>
+                        />)
+                    ))
                     }
                 </div>
             );
@@ -60,7 +57,7 @@ class FofView extends Component {
                             key={keyIndex}
                             data={fof[keyName]}
                         />);
-                    })) : (<p> Could Not Get Data </p>)
+                    })) : <p>Could Not Get Data</p>
                     }
                 </div>
             );

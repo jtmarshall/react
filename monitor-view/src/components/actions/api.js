@@ -2,7 +2,7 @@ import axios from "axios";  // request library
 
 // url for monitor status info endpoint
 let statusURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/api/monitorstatus";
-//let statusURL = "http://localhost:5555/api/monitorstatus";
+// let statusURL = "http://localhost:5555/api/monitorstatus";
 let monthlyStatusURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/api/monthlymonitorstatus";
 let fofURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/api/404list";
 let facilityListURL = "http://monitoring-env.qj3cticwqw.us-east-1.elasticbeanstalk.com/api/getFacilities";

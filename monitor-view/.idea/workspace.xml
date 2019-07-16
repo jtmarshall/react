@@ -2,86 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae064c4d-a7e2-443c-a40e-20e638daed89" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/material-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/material-dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/charts/eChart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/css/material-dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/logo/yak-logo-fullbody-small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/logo/yak-logo-fullbody.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/logo/yak-logo-fullbody.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/logo/yak-logo-greencircle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/logo/yak-logo-head-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/logo/yak-logo-head.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/logo/yak-logo-head.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/logo/yak-logo-orangecircle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/assets/material-dashboard-react.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/Dash.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/api/api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/Conversion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/ConversionPath.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/lineChart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/nivoBar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/nivoLine.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/nivoPie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Conversion/summary.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Explorer/Builder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Explorer/Explorer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Explorer/Stalker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Export/Export.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Export/exportsTable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Facility/Facility.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Facility/FacilityVolume.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Facility/PrintComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Facility/facility.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Facility/facilityAdmitsGoal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Facility/facilityForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Facility/facilityPie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Facility/facilityVolumeChart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Geo/Geo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Geo/Geo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Settings/Settings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Storyboard/Storyboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Timeframe/Timeframe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Timeframe/lineChart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Touch/Touch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/components/Touch/touchChart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/sidebar/Sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/Card/Card.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/Card/CardAvatar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/Card/CardBody.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/Card/CardFooter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/Card/CardHeader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/Card/CardIcon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/DateComponent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/datePicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/facilityAutoComplete.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/skuFilter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/table.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/dashboard/tools/toolbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/global.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/login/AuthService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/login/Login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/login/Login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/reducer/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/reducers/actions/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/reducers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dash/registerServiceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nav/Heading.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/alphaBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/actions/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/actions/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/fof.view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/fof.view.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/status.view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/status.view.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/testAutoComplete.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,11 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/actions/api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="77" lean-forward="true" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="615">
-              <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -107,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="444">
-              <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+              <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -115,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/status.view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+            <state relative-caret-position="154">
+              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -130,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/fof.view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="116" lean-forward="true" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="116" />
+            <state relative-caret-position="75">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -212,7 +144,6 @@
         <option value="$PROJECT_DIR$/src/views/facilityAutoComplete.js" />
         <option value="$PROJECT_DIR$/src/dash/dashboard/api/api.js" />
         <option value="$PROJECT_DIR$/src/views/manualCrawl.view.js" />
-        <option value="$PROJECT_DIR$/src/components/actions/api.js" />
         <option value="$PROJECT_DIR$/src/dash/dashboard/components/Facility/PrintComponent.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -223,6 +154,7 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/views/fof.view.js" />
         <option value="$PROJECT_DIR$/src/views/status.view.js" />
+        <option value="$PROJECT_DIR$/src/components/actions/api.js" />
       </list>
     </option>
   </component>
@@ -331,6 +263,13 @@
               <item name="monitor-view" type="b2602c69:ProjectViewProjectNode" />
               <item name="monitor-view" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="monitor-view" type="b2602c69:ProjectViewProjectNode" />
+              <item name="monitor-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -406,12 +345,12 @@
       <workItem from="1554479054867" duration="3321000" />
       <workItem from="1555083438307" duration="189000" />
       <workItem from="1555345279347" duration="77000" />
-      <workItem from="1563218093393" duration="5339000" />
+      <workItem from="1563218093393" duration="7943000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162713000" />
+    <option name="totallyTimeSpent" value="165317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="85" y="-1057" width="1629" height="1057" extended-state="0" />
@@ -703,13 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/actions/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-261">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/manualCrawl.view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -731,13 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="2173" column="3" selection-start-line="2173" selection-start-column="1" selection-end-line="2173" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -785,7 +710,7 @@
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
-          <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+          <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -794,21 +719,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/fof.view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="116" lean-forward="true" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="116" />
+        <state relative-caret-position="75">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/status.view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+        <state relative-caret-position="154">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/actions/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="77" lean-forward="true" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
         </state>
       </provider>
     </entry>
